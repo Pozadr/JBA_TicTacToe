@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Cinema/Problems-Cinema.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Cinema/Problems-Cinema.iml" group="TicTacToe/Problems-Cinema" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Cinema/Problems-Cinema_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Cinema/Problems-Cinema_main.iml" group="TicTacToe/Problems-Cinema" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Cinema/Problems-Cinema_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Cinema/Problems-Cinema_test.iml" group="TicTacToe/Problems-Cinema" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Printing each word in a new line/Problems-Printing_each_word_in_a_new_line.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Printing each word in a new line/Problems-Printing_each_word_in_a_new_line.iml" group="TicTacToe/Problems-Printing_each_word_in_a_new_line" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Printing each word in a new line/Problems-Printing_each_word_in_a_new_line_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Printing each word in a new line/Problems-Printing_each_word_in_a_new_line_main.iml" group="TicTacToe/Problems-Printing_each_word_in_a_new_line" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Printing each word in a new line/Problems-Printing_each_word_in_a_new_line_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Printing each word in a new line/Problems-Printing_each_word_in_a_new_line_test.iml" group="TicTacToe/Problems-Printing_each_word_in_a_new_line" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Rotate a rectange array/Problems-Rotate_a_rectange_array.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Rotate a rectange array/Problems-Rotate_a_rectange_array.iml" group="TicTacToe/Problems-Rotate_a_rectange_array" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Rotate a rectange array/Problems-Rotate_a_rectange_array_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Rotate a rectange array/Problems-Rotate_a_rectange_array_main.iml" group="TicTacToe/Problems-Rotate_a_rectange_array" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Rotate a rectange array/Problems-Rotate_a_rectange_array_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Rotate a rectange array/Problems-Rotate_a_rectange_array_test.iml" group="TicTacToe/Problems-Rotate_a_rectange_array" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The star figure/Problems-The_star_figure.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The star figure/Problems-The_star_figure.iml" group="TicTacToe/Problems-The_star_figure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The star figure/Problems-The_star_figure_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The star figure/Problems-The_star_figure_main.iml" group="TicTacToe/Problems-The_star_figure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/The star figure/Problems-The_star_figure_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/The star figure/Problems-The_star_figure_test.iml" group="TicTacToe/Problems-The_star_figure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI/task/Tic-Tac-Toe_with_AI-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI/task/Tic-Tac-Toe_with_AI-task.iml" group="TicTacToe/Tic-Tac-Toe_with_AI-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI/task/Tic-Tac-Toe_with_AI-task_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI/task/Tic-Tac-Toe_with_AI-task_main.iml" group="TicTacToe/Tic-Tac-Toe_with_AI-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI/task/Tic-Tac-Toe_with_AI-task_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Tic-Tac-Toe with AI/task/Tic-Tac-Toe_with_AI-task_test.iml" group="TicTacToe/Tic-Tac-Toe_with_AI-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TicTacToe.iml" filepath="$PROJECT_DIR$/.idea/modules/TicTacToe.iml" group="TicTacToe" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util.iml" group="TicTacToe/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_main.iml" group="TicTacToe/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_test.iml" group="TicTacToe/util" />
+    </modules>
+  </component>
+</project>
