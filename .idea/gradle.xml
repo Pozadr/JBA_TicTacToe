@@ -5,12 +5,16 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="delegatedBuild" value="false" />
+        <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#JAVA_INTERNAL" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Problems/Cinema" />
+            <option value="$PROJECT_DIR$/Problems/Currencies" />
+            <option value="$PROJECT_DIR$/Problems/Fix the program" />
             <option value="$PROJECT_DIR$/Problems/Printing each word in a new line" />
             <option value="$PROJECT_DIR$/Problems/Rotate a rectange array" />
             <option value="$PROJECT_DIR$/Problems/The star figure" />
