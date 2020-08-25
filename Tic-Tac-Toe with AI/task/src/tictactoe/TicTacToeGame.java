@@ -24,12 +24,10 @@ public class TicTacToeGame {
     }
 
     public void runGame() {
-        boolean gameFinished = false;
-        boolean wrongInput = true;
         int xCoordinate;
         int yCoordinate;
 
-        while (wrongInput) {
+        while (true) {
             //read coordinates
             System.out.print("Enter the coordinates: ");
             String input = getStringInputFromUser();
@@ -49,13 +47,14 @@ public class TicTacToeGame {
                             then the user should make a move with O.
                             */
                             if (checkXMoreThanO()) {
-                                gameMatrix[3 - yCoordinate][xCoordinate - 1] = 'X';
-                            } else {
                                 gameMatrix[3 - yCoordinate][xCoordinate - 1] = 'O';
+                            } else {
+                                gameMatrix[3 - yCoordinate][xCoordinate - 1] = 'X';
                             }
                             printMatrix();
+                            checkWhoWonTheGame();
 
-                            wrongInput = false;
+                            break; // break while loop
                         } else {
                             System.out.println("This cell is occupied! Choose another one!");
                         /* Suppose the bottom left cell has the coordinates (1, 1)
