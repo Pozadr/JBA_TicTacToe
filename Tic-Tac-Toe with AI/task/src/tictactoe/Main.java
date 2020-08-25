@@ -6,7 +6,7 @@ public class Main {
         // game init
         game.gameInitialization();
         // let's begin the game
-
+        game.runGame();
 
     }
 
