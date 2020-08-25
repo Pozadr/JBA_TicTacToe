@@ -8,13 +8,14 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="#JAVA_INTERNAL" />
+        <option name="gradleJvm" value="14" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Problems/Cinema" />
             <option value="$PROJECT_DIR$/Problems/Currencies" />
             <option value="$PROJECT_DIR$/Problems/Fix the program" />
+            <option value="$PROJECT_DIR$/Problems/Generate random numbers" />
             <option value="$PROJECT_DIR$/Problems/Printing each word in a new line" />
             <option value="$PROJECT_DIR$/Problems/Rotate a rectange array" />
             <option value="$PROJECT_DIR$/Problems/The star figure" />
