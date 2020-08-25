@@ -86,11 +86,39 @@ public class TicTacToeGame {
                 }
             }
         }
-        return xCounter >= oCounter;
+        return xCounter > oCounter;
     }
     private void checkWhoWonTheGame() {
-        System.out.println("Game not finished");
+        //Check if there are some 'O' or 'X' in line: 00 01 02 | 10 11 12 | 20 21 22 | 00 10 20 | 01 11 21 | 02 12 22
+        // or to the cross: 00 11 22 | 02 11 20.
+        if (       gameMatrix[0][0] == 'X' && gameMatrix[0][1] == 'X' && gameMatrix[0][2] == 'X'
+                || gameMatrix[1][0] == 'X' && gameMatrix[1][1] == 'X' && gameMatrix[1][2] == 'X'
+                || gameMatrix[2][0] == 'X' && gameMatrix[2][1] == 'X' && gameMatrix[2][2] == 'X'
+                || gameMatrix[0][0] == 'X' && gameMatrix[1][0] == 'X' && gameMatrix[2][0] == 'X'
+                || gameMatrix[0][1] == 'X' && gameMatrix[1][1] == 'X' && gameMatrix[2][1] == 'X'
+                || gameMatrix[0][2] == 'X' && gameMatrix[1][2] == 'X' && gameMatrix[2][2] == 'X'
+                || gameMatrix[0][0] == 'X' && gameMatrix[1][1] == 'X' && gameMatrix[2][2] == 'X'
+                || gameMatrix[0][2] == 'X' && gameMatrix[1][1] == 'X' && gameMatrix[2][0] == 'X') {
+            System.out.println("X wins");
+        } else if (gameMatrix[0][0] == 'O' && gameMatrix[0][1] == 'O' && gameMatrix[0][2] == 'O'
+                || gameMatrix[1][0] == 'O' && gameMatrix[1][1] == 'O' && gameMatrix[1][2] == 'O'
+                || gameMatrix[2][0] == 'O' && gameMatrix[2][1] == 'O' && gameMatrix[2][2] == 'O'
+                || gameMatrix[0][0] == 'O' && gameMatrix[1][0] == 'O' && gameMatrix[2][0] == 'O'
+                || gameMatrix[0][1] == 'O' && gameMatrix[1][1] == 'O' && gameMatrix[2][1] == 'O'
+                || gameMatrix[0][2] == 'O' && gameMatrix[1][2] == 'O' && gameMatrix[2][2] == 'O'
+                || gameMatrix[0][0] == 'O' && gameMatrix[1][1] == 'O' && gameMatrix[2][2] == 'O'
+                || gameMatrix[0][2] == 'O' && gameMatrix[1][1] == 'O' && gameMatrix[2][0] == 'O') {
+            System.out.println("O wins");
+
+        } else if (gameMatrix[0][0] != ' ' && gameMatrix[0][1] != ' ' && gameMatrix[0][2] != ' '
+                && gameMatrix[1][0] != ' ' && gameMatrix[1][1] != ' ' && gameMatrix[1][2] != ' '
+                && gameMatrix[2][0] != ' ' && gameMatrix[2][1] != ' ' && gameMatrix[2][2] != ' ') {
+            System.out.println("Draw");
+        } else {
+            System.out.println("Game not finished");
+        }
     }
+
     private String getStringInputFromUser() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().replaceAll(" ","");  // replaceAll to cut all spaces
