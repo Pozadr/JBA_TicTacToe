@@ -275,23 +275,6 @@ files:
         }
     }
   learner_created: false
-- name: src/tictactoe/Main.java
-  visible: true
-  text: |
-    package tictactoe;
-
-    public class Main {
-        public static void main(String[] args) {
-            TicTacToeGame game = new TicTacToeGame();
-            // game init
-            game.gameInitialization();
-            // let's begin the game
-            game.runGame();
-
-        }
-
-    }
-  learner_created: true
 - name: src/tictactoe/TicTacToeGame.java
   visible: true
   text: |
@@ -457,6 +440,9 @@ files:
             }
         }
     }
+  learner_created: true
+- name: src/tictactoe/Main.java
+  visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/81/stages/448/implement
 status: Unchecked
