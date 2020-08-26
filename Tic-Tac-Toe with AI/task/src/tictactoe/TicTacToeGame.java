@@ -5,15 +5,11 @@ import java.util.Scanner;
 
 public class TicTacToeGame {
 
-    private final int rowQuantity = 3;
-    private final int fieldsQuantity = 3;
-    private final char[][] gameMatrix = new char[rowQuantity][fieldsQuantity];
-
-    public void gameInitialization() {
-        // game init validation
-        fillInitMatrix("_________"); // empty board
-        printMatrix();
-    }
+    private final char[][] gameMatrix = new char[][]{
+            {' ', ' ', ' '},
+            {' ', ' ', ' '},
+            {' ', ' ', ' '}
+    };
 
     public void runGame() {
         while (true) {
@@ -46,13 +42,15 @@ public class TicTacToeGame {
 
     }
     private void userMove() {
+        Scanner scanner = new Scanner(System.in);
+
         int xCoordinate;
         int yCoordinate;
 
         while (true) {
             //read coordinates
             System.out.print("Enter the coordinates: ");
-            String input = getStringInputFromUser();
+            String input = scanner.nextLine().replaceAll(" ","");  // replaceAll to cut all spaces
             // input String should have only 2 numbers (Integers); first(1-3), second(1-3)
             if (input.length() == 2) {
                 try {
@@ -66,11 +64,6 @@ public class TicTacToeGame {
                             break; // break while loop
                         } else {
                         System.out.println("This cell is occupied! Choose another one!");
-                    /* Suppose the bottom left cell has the coordinates (1, 1)
-                    and the top right cell has the coordinates (3, 3) like in this table:
-                    (1, 3) (2, 3) (3, 3)
-                    (1, 2) (2, 2) (3, 2)
-                    (1, 1) (2, 1) (3, 1) */
                         }
                     } else {
                         System.out.println("Coordinates should be from 1 to 3!");
@@ -131,12 +124,7 @@ public class TicTacToeGame {
         return false;
     }
 
-    private String getStringInputFromUser() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine().replaceAll(" ","");  // replaceAll to cut all spaces
-    }
-
-    private void fillInitMatrix (String userGameLayoutInput) {
+    public void fillInitMatrix (String userGameLayoutInput) {
         // userGameLayoutInput --> gameMatrix. String input used to fill two-dimensional array.
         int charCounter = 0;
         for (int i = 0; i < gameMatrix.length; i++) {
@@ -151,7 +139,7 @@ public class TicTacToeGame {
         }
     }
 
-    private void printMatrix() {
+    public void printMatrix() {
         for (int i = 0; i < gameMatrix.length; i++) {
             if (i == 0) {
                 System.out.println("---------");
