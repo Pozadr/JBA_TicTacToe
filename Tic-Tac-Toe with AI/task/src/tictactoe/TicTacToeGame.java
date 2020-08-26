@@ -1,5 +1,6 @@
 package tictactoe;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToeGame {
@@ -21,15 +22,27 @@ public class TicTacToeGame {
             if (checkWhoWonTheGame()) {
                 break;
             }
-            AiMove();
+            AiMoveEasy();
             printMatrix();
             if (checkWhoWonTheGame()) {
                 break;
             }
         }
     }
-    private void AiMove() {
-        System.out.println("Making move level easy");
+    private void AiMoveEasy() {
+        System.out.println("Making move level \"easy\"");
+        Random random = new Random();
+        int xCoordinate;
+        int yCoordinate;
+
+        while (true) {
+            xCoordinate = random.nextInt(3 - 1 + 1) + 1; // Coordinates range <1-3>
+            yCoordinate = random.nextInt(3 - 1 + 1) + 1;
+            if (gameMatrix[3 - yCoordinate][xCoordinate - 1] == ' ') {
+                gameMatrix[3 - yCoordinate][xCoordinate - 1] = 'O';
+                break; // break while loop
+            }
+        }
 
     }
     private void userMove() {
@@ -66,7 +79,7 @@ public class TicTacToeGame {
                     System.out.println("You should enter numbers!");
                 }
             } else {
-                System.out.println("You should enter numbers!");
+                System.out.println("Wrong input! Try again!");
             }
         }
     }
@@ -85,6 +98,7 @@ public class TicTacToeGame {
         }
         return xCounter > oCounter;
     }
+
     private boolean checkWhoWonTheGame() {
         //Check if there are some 'O' or 'X' in line: 00 01 02 | 10 11 12 | 20 21 22 | 00 10 20 | 01 11 21 | 02 12 22
         // or to the cross: 00 11 22 | 02 11 20.
@@ -112,6 +126,7 @@ public class TicTacToeGame {
                 && gameMatrix[1][0] != ' ' && gameMatrix[1][1] != ' ' && gameMatrix[1][2] != ' '
                 && gameMatrix[2][0] != ' ' && gameMatrix[2][1] != ' ' && gameMatrix[2][2] != ' ') {
             System.out.println("Draw");
+            return true;
         }
         return false;
     }
