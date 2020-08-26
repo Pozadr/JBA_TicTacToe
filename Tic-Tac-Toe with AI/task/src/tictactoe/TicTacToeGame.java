@@ -5,27 +5,14 @@ import java.util.Scanner;
 
 public class TicTacToeGame {
 
-    private final char[][] gameMatrix = new char[][]{
+    private char[][] gameMatrix = new char[][]{
             {' ', ' ', ' '},
             {' ', ' ', ' '},
             {' ', ' ', ' '}
     };
 
-    public void runGame() {
-        while (true) {
-            userMove();
-            printMatrix();
-            if (checkWhoWonTheGame()) {
-                break;
-            }
-            AiMoveEasy();
-            printMatrix();
-            if (checkWhoWonTheGame()) {
-                break;
-            }
-        }
-    }
-    private void AiMoveEasy() {
+
+    public void AiMoveEasy() {
         System.out.println("Making move level \"easy\"");
         Random random = new Random();
         int xCoordinate;
@@ -41,7 +28,7 @@ public class TicTacToeGame {
         }
 
     }
-    private void userMove() {
+    public void userMove() {
         Scanner scanner = new Scanner(System.in);
 
         int xCoordinate;
@@ -92,7 +79,7 @@ public class TicTacToeGame {
         return xCounter > oCounter;
     }
 
-    private boolean checkWhoWonTheGame() {
+    public boolean checkWhoWonTheGame() {
         //Check if there are some 'O' or 'X' in line: 00 01 02 | 10 11 12 | 20 21 22 | 00 10 20 | 01 11 21 | 02 12 22
         // or to the cross: 00 11 22 | 02 11 20.
         if (       gameMatrix[0][0] == 'X' && gameMatrix[0][1] == 'X' && gameMatrix[0][2] == 'X'
