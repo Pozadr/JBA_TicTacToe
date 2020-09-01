@@ -2,21 +2,25 @@ package tictactoe;
 
 public class Main {
     public static void main(String[] args) {
-        TicTacToeGame game = new TicTacToeGame();
+        GameMatrix matrix = new GameMatrix();
+        User user = new User();
+        AIEasy aiEasy = new AIEasy();
 
-        game.printMatrix(); // init empty board | later main menu
+        matrix.printMatrix(); // init empty board | later main menu
 
         while (true) {
-            game.userMove();
-            game.printMatrix();
-            if (game.checkWhoWonTheGame()) {
+            user.userMove(matrix);
+            matrix.printMatrix();
+            if (matrix.checkWhoWonTheGame()) {
                 break;
             }
-            game.AiMoveEasy();
-            game.printMatrix();
-            if (game.checkWhoWonTheGame()) {
+            aiEasy.AiMoveEasy(matrix);
+            matrix.printMatrix();
+            if (matrix.checkWhoWonTheGame()) {
                 break;
             }
         }
     }
+
 }
+
