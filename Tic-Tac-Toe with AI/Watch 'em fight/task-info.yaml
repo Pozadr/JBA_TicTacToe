@@ -310,13 +310,13 @@ files:
         }
     }
   learner_created: true
-- name: src/tictactoe/Symbol.java
+- name: src/tictactoe/AIEasy.java
   visible: true
   learner_created: true
 - name: src/tictactoe/User.java
   visible: true
   learner_created: true
-- name: src/tictactoe/AIEasy.java
+- name: src/tictactoe/Symbol.java
   visible: true
   learner_created: true
 - name: src/tictactoe/GameMatrix.java
