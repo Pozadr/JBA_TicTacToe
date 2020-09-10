@@ -2,10 +2,16 @@ package tictactoe;
 
 import java.util.Scanner;
 
-public class User {
-    public void userMove(GameMatrix matrix) {
-        Scanner scanner = new Scanner(System.in);
+public class User extends Player {
+    Symbol symbol;
 
+    public User (Symbol symbol) {
+        this.symbol = symbol;
+    }
+
+    @Override
+    public void move(GameMatrix matrix) {
+        Scanner scanner = new Scanner(System.in);
         int xCoordinate;
         int yCoordinate;
 
@@ -22,7 +28,7 @@ public class User {
                     if (xCoordinate >= 1 && xCoordinate <= 3 && yCoordinate >= 1 && yCoordinate <= 3 ) {
                         // if cell is empty
                         if (matrix.isFieldOfMatrixFree(xCoordinate, yCoordinate)) {
-                            matrix.setFieldOfMatrix(xCoordinate, yCoordinate, Symbol.X);
+                            matrix.setFieldOfMatrix(xCoordinate, yCoordinate, symbol);
                             break; // break while loop
                         } else {
                             System.out.println("This cell is occupied! Choose another one!");

@@ -73,7 +73,7 @@ public class GameMatrix {
     }
 
     public void fillInitMatrix (String userGameLayoutInput) {
-        // userGameLayoutInput --> gameMatrix. String input used to fill two-dimensional array.
+        // userGameLayoutInput --> gameMatrix. String input used to fill two-dimensional array. Task 1/5.
         int charCounter = 0;
         for (int i = 0; i < gameMatrix.length; i++) {
             for (int j = 0; j < gameMatrix.length; j++) {
