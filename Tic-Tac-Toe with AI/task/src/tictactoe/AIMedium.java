@@ -2,16 +2,15 @@ package tictactoe;
 
 import java.util.Random;
 
-public class AIEasy extends Player{
+public class AIMedium extends Player {
     Symbol symbol;
 
-    public AIEasy (Symbol symbol) {
+    public AIMedium (Symbol symbol) {
         this.symbol = symbol;
     }
 
-
     public void move(GameMatrix matrix) {
-        System.out.println("Making move level \"easy\"");
+        System.out.println("Making move level \"medium\"");
         Random random = new Random();
         int xCoordinate;
         int yCoordinate;

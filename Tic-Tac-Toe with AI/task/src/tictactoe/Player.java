@@ -2,7 +2,7 @@ package tictactoe;
 
 public class Player {
 
-    public void move(GameMatrix matrix) {
+    protected void move(GameMatrix matrix) {
 
     }
 }
