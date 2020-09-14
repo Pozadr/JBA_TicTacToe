@@ -98,12 +98,12 @@ public class Main {
         while (true) {
             p1.move(matrix);
             matrix.printMatrix();
-            if (matrix.checkWhoWonTheGame()) {
+            if (matrix.isWinner()) {
                 break;
             }
             p2.move(matrix);
             matrix.printMatrix();
-            if (matrix.checkWhoWonTheGame()) {
+            if (matrix.isWinner()) {
                 break;
             }
         }

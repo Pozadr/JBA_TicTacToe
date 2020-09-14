@@ -15,12 +15,30 @@ public class AIMedium extends Player {
         int xCoordinate;
         int yCoordinate;
 
-        while (true) {
-            xCoordinate = random.nextInt(3 - 1 + 1) + 1; // Coordinates range <1-3>
-            yCoordinate = random.nextInt(3 - 1 + 1) + 1;
-            if (matrix.isFieldOfMatrixFree(xCoordinate, yCoordinate)) {
-                matrix.setFieldOfMatrix(xCoordinate, yCoordinate, symbol);
-                break; // break while loop
+        // declaration of an array of results to interpret
+        int[] checkingResult = matrix.checkTwoInRow(symbol);
+        // check if you can win
+        if(checkingResult[0] == 1) {
+            matrix.gameMatrix[checkingResult[1]][checkingResult[2]] = symbol;
+        } else {
+            // check if opponent can win
+            if (this.symbol == Symbol.O) {
+                checkingResult = matrix.checkTwoInRow(Symbol.X);
+            } else {
+                checkingResult = matrix.checkTwoInRow(Symbol.O);
+            }
+            if(checkingResult[0] == 1) {
+                matrix.gameMatrix[checkingResult[1]][checkingResult[2]] = symbol;
+            } else {
+                // make a random move
+                while (true) {
+                    xCoordinate = random.nextInt(3 - 1 + 1) + 1; // Coordinates range <1-3>
+                    yCoordinate = random.nextInt(3 - 1 + 1) + 1;
+                    if (matrix.isFieldOfMatrixFree(xCoordinate, yCoordinate)) {
+                        matrix.setFieldOfMatrix(xCoordinate, yCoordinate, symbol);
+                        break; // break while loop
+                    }
+                }
             }
         }
     }
