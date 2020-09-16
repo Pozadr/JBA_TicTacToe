@@ -2,14 +2,17 @@ package tictactoe;
 
 import java.util.Random;
 
-public class AIEasy extends Player{
-    Symbol symbol;
+public class AIEasy extends Player {
 
     public AIEasy (Symbol symbol) {
-        this.symbol = symbol;
+        super(symbol);
     }
 
-
+    /**
+     * Easy level of AI:
+     * do a move on random field.
+     */
+    @Override
     public void move(GameMatrix matrix) {
         System.out.println("Making move level \"easy\"");
         Random random = new Random();

@@ -3,10 +3,9 @@ package tictactoe;
 import java.util.Scanner;
 
 public class User extends Player {
-    Symbol symbol;
 
     public User (Symbol symbol) {
-        this.symbol = symbol;
+        super(symbol);
     }
 
     @Override

@@ -3,12 +3,18 @@ package tictactoe;
 import java.util.Random;
 
 public class AIMedium extends Player {
-    Symbol symbol;
 
     public AIMedium (Symbol symbol) {
-        this.symbol = symbol;
+        super(symbol);
     }
 
+    /**
+     * Medium level of AI:
+     * 1. Check can you win.
+     * 2. Check can your opponent win? Block its move.
+     * 3. If not 1. and not 2. do a random move.
+     */
+    @Override
     public void move(GameMatrix matrix) {
         System.out.println("Making move level \"medium\"");
         Random random = new Random();

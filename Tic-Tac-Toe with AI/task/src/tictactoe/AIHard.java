@@ -1,9 +1,14 @@
 package tictactoe;
 
-public class AIHard extends Player{
-    Symbol symbol;
+public class AIHard extends Player {
+
     public AIHard (Symbol symbol) {
-        this.symbol = symbol;
+        super(symbol);
+    }
+
+    @Override
+    public void move(GameMatrix matrix) {
+
     }
 
 

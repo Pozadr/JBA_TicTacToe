@@ -1,10 +1,13 @@
 package tictactoe;
 
-public class Player {
+public abstract class Player {
+    protected Symbol symbol;
 
-    protected void move(GameMatrix matrix) {
-
+    public Player(Symbol symbol) {
+        this.symbol = symbol;
     }
+
+    protected abstract void move(GameMatrix matrix);
 
     public static Player createPlayer (Symbol symbol, String request){
         switch (request) {
@@ -17,11 +20,8 @@ public class Player {
             case "medium": {
                 return  new AIMedium(symbol);
             }
-            case "hard": {
+            default: { // hard
                 return  new AIHard(symbol);
-            }
-            default: {
-                return  new Player();
             }
         }
     }
