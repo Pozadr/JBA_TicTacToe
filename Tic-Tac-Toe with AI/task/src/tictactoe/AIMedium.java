@@ -17,37 +17,34 @@ public class AIMedium extends Player {
     @Override
     public void move(GameMatrix matrix) {
         System.out.println("Making move level \"medium\"");
-        Random random = new Random();
-        int xCoordinate;
-        int yCoordinate;
-        /*
         // declaration of an array of results to interpret
-        int[] checkingResult = matrix.checkTwoInRow(symbol);
+        int[] checkingResult = matrix.checkFieldToWinNextMove(symbol);
         // check if you can win
         if(checkingResult[0] == 1) {
-            matrix.gameMatrix[checkingResult[1]][checkingResult[2]] = symbol;
+            matrix.gameMatrix[checkingResult[1]] = symbol;
         } else {
             // check if opponent can win
             if (this.symbol == Symbol.O) {
-                checkingResult = matrix.checkTwoInRow(Symbol.X);
+                checkingResult = matrix.checkFieldToWinNextMove(Symbol.X);
             } else {
-                checkingResult = matrix.checkTwoInRow(Symbol.O);
+                checkingResult = matrix.checkFieldToWinNextMove(Symbol.O);
             }
             if(checkingResult[0] == 1) {
-                matrix.gameMatrix[checkingResult[1]][checkingResult[2]] = symbol;
+                matrix.gameMatrix[checkingResult[1]] = symbol;
             } else {
                 // make a random move
                 while (true) {
-                    xCoordinate = random.nextInt(3 - 1 + 1) + 1; // Coordinates range <1-3>
-                    yCoordinate = random.nextInt(3 - 1 + 1) + 1;
-                    if (matrix.isFieldOfMatrixFree(xCoordinate, yCoordinate)) {
-                        matrix.setFieldOfMatrix(xCoordinate, yCoordinate, symbol);
+                    int field;
+                    Random random = new Random();
+                    field = random.nextInt( 9); // Coordinates range <0-8>
+                    if (matrix.isFieldOfMatrixFree(field)) {
+                        matrix.setFieldOfMatrix(field, symbol);
                         break; // break while loop
                     }
                 }
             }
         }
 
-         */
+
     }
 }

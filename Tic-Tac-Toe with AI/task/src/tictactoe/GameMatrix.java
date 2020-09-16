@@ -15,17 +15,20 @@ public class GameMatrix {
                                     Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY};
     }
 
-    public boolean isFieldOfMatrixFree(int field) {
+    protected boolean isFieldOfMatrixFree(int field) {
         return gameMatrix[field] == Symbol.EMPTY;
     }
 
-    public void setFieldOfMatrix(int field, Symbol symbol) {
+    protected void setFieldOfMatrix(int field, Symbol symbol) {
         gameMatrix[field]= symbol;
     }
 
+    /**
+     * Function check are 3 symbols in a row/column/diagonal.
+     * @param symbol - symbol to check on matrix.
+     * @return - winner / no winner
+     */
     public boolean isWinner(Symbol symbol) {
-        //Check if there are some 'O' or 'X' in line: 00 01 02 | 10 11 12 | 20 21 22 | 00 10 20 | 01 11 21 | 02 12 22
-        // or to the cross: 00 11 22 | 02 11 20.
         return     gameMatrix[0] == symbol && gameMatrix[1] == symbol && gameMatrix[2] == symbol // 1st row
                 || gameMatrix[3] == symbol && gameMatrix[4] == symbol && gameMatrix[5] == symbol // 2nd row
                 || gameMatrix[6] == symbol && gameMatrix[7] == symbol && gameMatrix[8] == symbol // 3rd row
@@ -42,53 +45,58 @@ public class GameMatrix {
                 && gameMatrix[6] != Symbol.EMPTY && gameMatrix[7] != Symbol.EMPTY && gameMatrix[8] != Symbol.EMPTY;
     }
 
-
-    public int[] checkTwoInRow(Symbol symbol) {
-        int xCoordinate;
-        int yCoordinate;
-        int[] result = new int[3];
-        /*
-        result [0] = two in row -> 1; not -> 0
-        result [1] = xCoordinate
-        result [2] = yCoordinate
-         */
+    /**
+     * Function check is it possible to win with next move.
+     * May be used to check player move or to block next opponent move.
+     *
+     * @param symbol - which symbol should be search in matrix.
+     * @return - result [0] = two in row -> 1; not -> 0; result [1] = field
+     *
+     */
+    public int[] checkFieldToWinNextMove(Symbol symbol) {
+        int[] result = new int[2]; // [0, 1]
 
         // check rows
-        /*
+        int symbolCounter = 0;
         for (int i = 0; i < gameMatrix.length; i++) {
-            int symbolCounter = 0;
-            for (int j = 0; j < gameMatrix.length; j++) {
-                if (gameMatrix[i][j] == symbol) {
-                    symbolCounter++;
-                    if (symbolCounter == 2) {
-                        xCoordinate = i;
-                        for (int k = 0; k < gameMatrix.length; k++) {
-                            if (gameMatrix[xCoordinate][k] == Symbol.EMPTY) {
-                                yCoordinate = k;
-                                result[0] = 1;
-                                result[1] = xCoordinate;
-                                result[2] = yCoordinate;
-                                return result;
-                            }
+            if (i == 3 || i == 6) {
+                symbolCounter = 0; // for each row reset counter
+            }
+            if (gameMatrix[i] == symbol) {
+                symbolCounter++;
+                if (symbolCounter == 2) {
+                    // check which field is EMPTY
+                    int n = 0;
+                    if (i == 0 || i == 1 || i == 2) {
+                        n = 0;
+                    } else if (i == 3 || i == 4 || i == 5) {
+                        n = 3;
+                    } else if (i == 6 || i == 7 || i == 8) {
+                        n = 6;
+                    }
+                    for (int k = n; k < n + 3; k++) {
+                        if (isFieldOfMatrixFree(k)) {
+                            result[0] = 1;
+                            result[1] = k;
+                            return result;
                         }
                     }
                 }
             }
         }
+
         // check columns
-        for (int i = 0; i < gameMatrix.length; i++) {
-            int symbolCounter = 0;
-            for (int j = 0; j < gameMatrix.length; j++) {
-                if (gameMatrix[j][i] == symbol) {
+        for (int i = 0; i < 3; i++) {
+            symbolCounter = 0; // for each column reset counter
+            for (int j = i; j <= i + 6; j = j + 3) {
+                if (gameMatrix[j] == symbol) {
                     symbolCounter++;
                     if (symbolCounter == 2) {
-                        yCoordinate = i;
-                        for (int k = 0; k < gameMatrix.length; k++) {
-                            if (gameMatrix[k][yCoordinate] == Symbol.EMPTY) {
-                                xCoordinate = k;
+                        // check which field is EMPTY
+                        for (int k = i; k <= i + 6; k = k + 3) {
+                            if (isFieldOfMatrixFree(k)) {
                                 result[0] = 1;
-                                result[1] = xCoordinate;
-                                result[2] = yCoordinate;
+                                result[1] = k;
                                 return result;
                             }
                         }
@@ -96,55 +104,46 @@ public class GameMatrix {
                 }
             }
         }
+
         // check diagonals
-        if (       gameMatrix[0][0] == symbol && gameMatrix[1][1] == symbol
-                || gameMatrix[0][0] == symbol && gameMatrix[2][2] == symbol
-                || gameMatrix[1][1] == symbol && gameMatrix[2][2] == symbol)
+        if (       gameMatrix[0] == symbol && gameMatrix[4] == symbol
+                || gameMatrix[0] == symbol && gameMatrix[8] == symbol
+                || gameMatrix[4] == symbol && gameMatrix[8] == symbol)
         {
-            if (gameMatrix[0][0] == Symbol.EMPTY) {
+            if (gameMatrix[0] == Symbol.EMPTY) {
                 result[0] = 1;
                 result[1] = 0;
-                result[2] = 0;
                 return result;
-            } else if (gameMatrix[1][1] == Symbol.EMPTY) {
+            } else if (gameMatrix[4] == Symbol.EMPTY) {
                 result[0] = 1;
-                result[1] = 1;
-                result[2] = 1;
+                result[1] = 4;
                 return result;
-            } else if (gameMatrix[2][2] == Symbol.EMPTY){
+            } else if (gameMatrix[8] == Symbol.EMPTY){
                 result[0] = 1;
-                result[1] = 2;
-                result[2] = 2;
+                result[1] = 8;
                 return result;
             }
         }
-        else if (    gameMatrix[0][2] == symbol && gameMatrix[1][1] == symbol
-                || gameMatrix[0][2] == symbol && gameMatrix[2][0] == symbol
-                || gameMatrix[1][1] == symbol && gameMatrix[2][0] == symbol)
+        else if (    gameMatrix[6] == symbol && gameMatrix[4] == symbol
+                || gameMatrix[6] == symbol && gameMatrix[2] == symbol
+                || gameMatrix[4] == symbol && gameMatrix[2] == symbol)
         {
-            if (gameMatrix[0][2] == Symbol.EMPTY) {
+            if (gameMatrix[6] == Symbol.EMPTY) {
                 result[0] = 1;
-                result[1] = 0;
-                result[2] = 2;
+                result[1] = 6;
                 return result;
-            } else if (gameMatrix[1][1] == Symbol.EMPTY) {
+            } else if (gameMatrix[4] == Symbol.EMPTY) {
                 result[0] = 1;
-                result[1] = 1;
-                result[2] = 1;
+                result[1] = 4;
                 return result;
-            } else if (gameMatrix[2][0] == Symbol.EMPTY) {
+            } else if (gameMatrix[2] == Symbol.EMPTY) {
                 result[0] = 1;
                 result[1] = 2;
-                result[2] = 0;
                 return result;
             }
         }
-        result[0] = 0; // there is no 2 symbols in a row/column/diagonal or possible move is blocked by opponent
-
-         */
-        return result;
-
-
+        // there is no 2 symbols in a row/column/diagonal or possible move is blocked by opponent
+        return result; // {0, 0}
     }
 
     public void printMatrix() {

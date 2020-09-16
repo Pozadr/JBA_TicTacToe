@@ -22,6 +22,8 @@ public class User extends Player {
      *      6, 7, 8
      *
      * In move function there is a casting of two to one dimensional matrix.
+     *
+     * @param matrix - current status of game matrix
      */
     @Override
     public void move(GameMatrix matrix) {
@@ -62,6 +64,8 @@ public class User extends Player {
 
     /**
      * Data validation is in move function.
+     * "Check if coordinates are not 0. Should be range <1-3>."
+     *
      * @param xCoordinate - x from two dimensional matrix (x, y)
      * @param yCoordinate - y from two dimensional matrix (x, y)
      * @return - two to one dimensional matrix coordinate

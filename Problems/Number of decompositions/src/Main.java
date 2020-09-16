@@ -4,12 +4,12 @@ class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        decomposition(n, 0);
+        //decomposition(n, 0);
 
         // put your code here
     }
 
-    public static int[] decomposition (int n, int sum) {
+    /*public static int[] decomposition (int n, int sum) {
         while ((n - sum) < 0) {
             if (sum == 0) {
                 sum = 1;
@@ -23,4 +23,9 @@ class Main {
             decomposition(n - 1, sum + 1);
         }
     }
+
+
+
+     */
 }
+

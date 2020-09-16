@@ -11,6 +11,8 @@ public class AIEasy extends Player {
     /**
      * Easy level of AI:
      * do a move on random field.
+     *
+     * @param matrix - current status of game matrix
      */
     @Override
     public void move(GameMatrix matrix) {
