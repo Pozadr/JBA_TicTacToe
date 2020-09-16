@@ -56,12 +56,20 @@ public class Main {
         while (true) {
             p1.move(matrix);
             matrix.printMatrix();
-            if (matrix.isWinner()) {
+            if (matrix.isWinner(p1.symbol)) {
+                System.out.println(p1.symbol.getSymbol() + " wins");
+                break;
+            } else if (matrix.isDraw()) {
+                System.out.println("Draw");
                 break;
             }
             p2.move(matrix);
             matrix.printMatrix();
-            if (matrix.isWinner()) {
+            if (matrix.isWinner(p2.symbol)) {
+                System.out.println(p2.symbol.getSymbol() + " wins");
+                break;
+            } else if (matrix.isDraw()) {
+                System.out.println("Draw");
                 break;
             }
         }

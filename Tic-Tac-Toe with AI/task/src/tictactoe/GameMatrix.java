@@ -25,36 +25,23 @@ public class GameMatrix {
         gameMatrix[row][column] = symbol;
     }
 
-    public boolean isWinner() {
+    public boolean isWinner(Symbol symbol) {
         //Check if there are some 'O' or 'X' in line: 00 01 02 | 10 11 12 | 20 21 22 | 00 10 20 | 01 11 21 | 02 12 22
         // or to the cross: 00 11 22 | 02 11 20.
-        if (       gameMatrix[0][0] == Symbol.X && gameMatrix[0][1] == Symbol.X && gameMatrix[0][2] == Symbol.X
-                || gameMatrix[1][0] == Symbol.X && gameMatrix[1][1] == Symbol.X && gameMatrix[1][2] == Symbol.X
-                || gameMatrix[2][0] == Symbol.X && gameMatrix[2][1] == Symbol.X && gameMatrix[2][2] == Symbol.X
-                || gameMatrix[0][0] == Symbol.X && gameMatrix[1][0] == Symbol.X && gameMatrix[2][0] == Symbol.X
-                || gameMatrix[0][1] == Symbol.X && gameMatrix[1][1] == Symbol.X && gameMatrix[2][1] == Symbol.X
-                || gameMatrix[0][2] == Symbol.X && gameMatrix[1][2] == Symbol.X && gameMatrix[2][2] == Symbol.X
-                || gameMatrix[0][0] == Symbol.X && gameMatrix[1][1] == Symbol.X && gameMatrix[2][2] == Symbol.X
-                || gameMatrix[0][2] == Symbol.X && gameMatrix[1][1] == Symbol.X && gameMatrix[2][0] == Symbol.X) {
-            System.out.println("X wins");
-            return true;
-        } else if (gameMatrix[0][0] == Symbol.O && gameMatrix[0][1] == Symbol.O && gameMatrix[0][2] == Symbol.O
-                || gameMatrix[1][0] == Symbol.O && gameMatrix[1][1] == Symbol.O && gameMatrix[1][2] == Symbol.O
-                || gameMatrix[2][0] == Symbol.O && gameMatrix[2][1] == Symbol.O && gameMatrix[2][2] == Symbol.O
-                || gameMatrix[0][0] == Symbol.O && gameMatrix[1][0] == Symbol.O && gameMatrix[2][0] == Symbol.O
-                || gameMatrix[0][1] == Symbol.O && gameMatrix[1][1] == Symbol.O && gameMatrix[2][1] == Symbol.O
-                || gameMatrix[0][2] == Symbol.O && gameMatrix[1][2] == Symbol.O && gameMatrix[2][2] == Symbol.O
-                || gameMatrix[0][0] == Symbol.O && gameMatrix[1][1] == Symbol.O && gameMatrix[2][2] == Symbol.O
-                || gameMatrix[0][2] == Symbol.O && gameMatrix[1][1] == Symbol.O && gameMatrix[2][0] == Symbol.O) {
-            System.out.println("O wins");
-            return true;
-        } else if (gameMatrix[0][0] != Symbol.EMPTY && gameMatrix[0][1] != Symbol.EMPTY && gameMatrix[0][2] != Symbol.EMPTY
+        return gameMatrix[0][0] == symbol && gameMatrix[0][1] == symbol && gameMatrix[0][2] == symbol
+                || gameMatrix[1][0] == symbol && gameMatrix[1][1] == symbol && gameMatrix[1][2] == symbol
+                || gameMatrix[2][0] == symbol && gameMatrix[2][1] == symbol && gameMatrix[2][2] == symbol
+                || gameMatrix[0][0] == symbol && gameMatrix[1][0] == symbol && gameMatrix[2][0] == symbol
+                || gameMatrix[0][1] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][1] == symbol
+                || gameMatrix[0][2] == symbol && gameMatrix[1][2] == symbol && gameMatrix[2][2] == symbol
+                || gameMatrix[0][0] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][2] == symbol
+                || gameMatrix[0][2] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][0] == symbol;
+    }
+
+    public boolean isDraw () {
+        return gameMatrix[0][0] != Symbol.EMPTY && gameMatrix[0][1] != Symbol.EMPTY && gameMatrix[0][2] != Symbol.EMPTY
                 && gameMatrix[1][0] != Symbol.EMPTY && gameMatrix[1][1] != Symbol.EMPTY && gameMatrix[1][2] != Symbol.EMPTY
-                && gameMatrix[2][0] != Symbol.EMPTY && gameMatrix[2][1] != Symbol.EMPTY && gameMatrix[2][2] != Symbol.EMPTY) {
-            System.out.println("Draw");
-            return true;
-        }
-        return false;
+                && gameMatrix[2][0] != Symbol.EMPTY && gameMatrix[2][1] != Symbol.EMPTY && gameMatrix[2][2] != Symbol.EMPTY;
     }
 
 
