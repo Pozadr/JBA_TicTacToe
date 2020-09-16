@@ -4,6 +4,14 @@ public class Main {
 
     public static int comb(int n, int k) {
         // write your code here
+        System.out.println("n = " + n + " " + "k = " + k);
+        if (k > n) {
+            return 0;
+        } else if (k == 0) {
+            return 1;
+        } else {
+            return comb(n - 1, k) + comb(n - 1, k -1);
+        }
     }
 
     /* Do not change code below */

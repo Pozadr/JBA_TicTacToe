@@ -3,7 +3,11 @@ import java.util.Scanner;
 public class Main {
 
     public static double pow(double a, long n) {
-        // write your code here
+        if (n % 2 == 0) {
+            return Math.pow(Math.pow(a, 2), n / 2);
+        } else {
+            return a * Math.pow(a, n - 1);
+        }
     }
 
     /* Do not change code below */

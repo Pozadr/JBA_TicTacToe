@@ -8,7 +8,11 @@ interface Scalable {
     void scale(float factor);
 }
 
-final class Circle {
+interface MutableShape extends Movable, Scalable {
+
+}
+
+final class Circle implements MutableShape {
 
     /**
      * Defines the horizontal position of the center of the circle
@@ -42,9 +46,19 @@ final class Circle {
     public float getRadius() {
         return radius;
     }
+
+    public void move(float dx, float dy) {
+        this.centerX += dx;
+        this.centerY += dy;
+    }
+
+    public void scale(float factor) {
+        this.radius *= factor;
+    }
+
 }
 
-final class Rectangle {
+final class Rectangle implements MutableShape {
 
     /**
      * Defines the X coordinate of the upper-left corner of the rectangle.
@@ -87,5 +101,15 @@ final class Rectangle {
 
     public float getHeight() {
         return height;
+    }
+
+    public void move(float dx, float dy) {
+        this.x += dx;
+        this.y += dy;
+    }
+
+    public void scale(float factor) {
+        this.width *= factor;
+        this.height *= factor;
     }
 }

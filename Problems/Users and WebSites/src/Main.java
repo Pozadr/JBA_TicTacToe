@@ -1,26 +1,27 @@
-class User {
-
+abstract class BaseEntity {
     protected long id;
-
     protected long version;
 
-    protected String name;
 
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
-
     public long getVersion() {
         return version;
     }
-
     public void setVersion(long version) {
         this.version = version;
     }
+
+}
+
+class User extends BaseEntity {
+
+    protected String name;
+
 
     public String getName() {
         return name;
@@ -31,31 +32,12 @@ class User {
     }
 }
 
-class Visit {
-
-    protected long id;
-
-    protected long version;
+class Visit extends BaseEntity {
 
     protected User user;
 
     protected WebSite site;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getVersion() {
-        return version;
-    }
-
-    public void setVersion(long version) {
-        this.version = version;
-    }
 
     public User getUser() {
         return user;
@@ -74,29 +56,11 @@ class Visit {
     }
 }
 
-class WebSite {
-
-    protected long id;
-
-    protected long version;
+class WebSite extends BaseEntity{
 
     protected String url;
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getVersion() {
-        return version;
-    }
-
-    public void setVersion(long version) {
-        this.version = version;
-    }
 
     public String getUrl() {
         return url;
