@@ -14,11 +14,11 @@ public class AIEasy extends Player {
      */
     @Override
     public void move(GameMatrix matrix) {
-        System.out.println("Making move level \"easy\"");
-        Random random = new Random();
-        int field;
 
+        System.out.println("Making move level \"easy\"");
         while (true) {
+            Random random = new Random();
+            int field;
             field = random.nextInt( 9); // Coordinates range <0-8>
             if (matrix.isFieldOfMatrixFree(field)) {
                 matrix.setFieldOfMatrix(field, symbol);
