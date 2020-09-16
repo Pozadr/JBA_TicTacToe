@@ -18,7 +18,7 @@ public class AIMedium extends Player {
     public void move(GameMatrix matrix) {
         System.out.println("Making move level \"medium\"");
         // declaration of an array of results to interpret
-        int[] checkingResult = matrix.checkFieldToWinNextMove(symbol);
+        int[] checkingResult = matrix.checkFieldToWinNextMove(symbol).clone();
         // check if you can win
         if(checkingResult[0] == 1) {
             matrix.gameMatrix[checkingResult[1]] = symbol;

@@ -1,5 +1,7 @@
 package tictactoe;
 
+import java.util.ArrayList;
+
 public class GameMatrix {
     public final Symbol[] gameMatrix;
 
@@ -53,7 +55,7 @@ public class GameMatrix {
      * @return - result [0] = two in row -> 1; not -> 0; result [1] = field
      *
      */
-    public int[] checkFieldToWinNextMove(Symbol symbol) {
+    protected int[] checkFieldToWinNextMove(Symbol symbol) {
         int[] result = new int[2]; // [0, 1]
 
         // check rows
@@ -146,7 +148,17 @@ public class GameMatrix {
         return result; // {0, 0}
     }
 
-    public void printMatrix() {
+    protected ArrayList<Integer> checkEmptyFields() {
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < gameMatrix.length; i++) {
+            if (isFieldOfMatrixFree(i)) {
+                result.add(i);
+            }
+        }
+        return result;
+    }
+
+    protected void printMatrix() {
         for (int i = 0; i < gameMatrix.length; i++) {
             if (i == 0) {
                 System.out.println("---------");
@@ -164,5 +176,4 @@ public class GameMatrix {
             }
         }
     }
-
 }
