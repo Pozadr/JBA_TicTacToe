@@ -147,7 +147,6 @@ public class GameMatrix {
 
     }
 
-
     public void printMatrix() {
         for (int i = 0; i < gameMatrix.length; i++) {
             if (i == 0) {
@@ -161,46 +160,10 @@ public class GameMatrix {
                 System.out.print("|");
                 System.out.println();
             }
-
             if (i == gameMatrix.length - 1) {
                 System.out.println("---------");
             }
         }
     }
 
-    // ----------------------- OLD STUFF -----------------------
-    // Used in stage 1/5 - 2/5
-    /*
-    public void fillInitMatrix (String userGameLayoutInput) {
-        // userGameLayoutInput --> gameMatrix. String input used to fill two-dimensional array. Task 1/5.
-        int charCounter = 0;
-        for (int i = 0; i < gameMatrix.length; i++) {
-            for (int j = 0; j < gameMatrix.length; j++) {
-                if (userGameLayoutInput.charAt(charCounter) == '_') {
-                    gameMatrix[i][j] = Symbol.EMPTY;
-                } else if (userGameLayoutInput.charAt(charCounter) == 'X') {
-                    gameMatrix[i][j] = Symbol.X;
-                } else if (userGameLayoutInput.charAt(charCounter) == 'O') {
-                    gameMatrix[i][j] = Symbol.O;
-                }
-                charCounter++;
-            }
-        }
-    }
-
-    private boolean checkXMoreThanO() {
-        int xCounter = 0;
-        int oCounter = 0;
-        for (int i = 0; i < gameMatrix.length; i++) {
-            for (int j = 0; j < gameMatrix.length; j++) {
-                if (gameMatrix[i][j] == Symbol.X) {
-                    xCounter++;
-                } else if (gameMatrix[i][j] == Symbol.O) {
-                    oCounter++;
-                }
-            }
-        }
-        return xCounter > oCounter;
-    }
-     */
 }

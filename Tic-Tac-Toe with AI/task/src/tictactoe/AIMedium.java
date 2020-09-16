@@ -20,7 +20,7 @@ public class AIMedium extends Player {
         Random random = new Random();
         int xCoordinate;
         int yCoordinate;
-
+        /*
         // declaration of an array of results to interpret
         int[] checkingResult = matrix.checkTwoInRow(symbol);
         // check if you can win
@@ -47,5 +47,7 @@ public class AIMedium extends Player {
                 }
             }
         }
+
+         */
     }
 }

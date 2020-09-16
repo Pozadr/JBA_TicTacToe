@@ -13,7 +13,7 @@ public class User extends Player {
         Scanner scanner = new Scanner(System.in);
         int xCoordinate;
         int yCoordinate;
-
+        /*
         while (true) {
             //read coordinates
             System.out.print("Enter the coordinates: ");
@@ -41,6 +41,10 @@ public class User extends Player {
             } else {
                 System.out.println("Wrong input! Try again!");
             }
+
+
         }
+
+         */
     }
 }

@@ -16,14 +16,12 @@ public class AIEasy extends Player {
     public void move(GameMatrix matrix) {
         System.out.println("Making move level \"easy\"");
         Random random = new Random();
-        int xCoordinate;
-        int yCoordinate;
+        int field;
 
         while (true) {
-            xCoordinate = random.nextInt(3 - 1 + 1) + 1; // Coordinates range <1-3>
-            yCoordinate = random.nextInt(3 - 1 + 1) + 1;
-            if (matrix.isFieldOfMatrixFree(xCoordinate, yCoordinate)) {
-                matrix.setFieldOfMatrix(xCoordinate, yCoordinate, symbol);
+            field = random.nextInt( 9); // Coordinates range <0-8>
+            if (matrix.isFieldOfMatrixFree(field)) {
+                matrix.setFieldOfMatrix(field, symbol);
                 break; // break while loop
             }
         }
