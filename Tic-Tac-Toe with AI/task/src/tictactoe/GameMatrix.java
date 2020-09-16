@@ -1,47 +1,45 @@
 package tictactoe;
 
 public class GameMatrix {
-    public final Symbol[][] gameMatrix;
+    public final Symbol[] gameMatrix;
 
+    /**
+     * Game Matrix -  0, 1, 2,
+     *                3, 4, 5,
+     *                6, 7, 8
+     * There is 9 possible move in Tic-Tac-Toe game.
+     */
     public GameMatrix() {
-        gameMatrix = new Symbol[][]{
-                {Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY},
-                {Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY},
-                {Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY}
-        };
+        gameMatrix = new Symbol[] { Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY,
+                                    Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY,
+                                    Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY};
     }
 
-    public boolean isFieldOfMatrixFree(int x, int y) {
-        int column = x - 1;
-        int row = 3 - y;
-
-        return gameMatrix[row][column] == Symbol.EMPTY;
+    public boolean isFieldOfMatrixFree(int field) {
+        return gameMatrix[field] == Symbol.EMPTY;
     }
 
-    public void setFieldOfMatrix(int x, int y, Symbol symbol) {
-        int column = x - 1;
-        int row = 3 - y;
-
-        gameMatrix[row][column] = symbol;
+    public void setFieldOfMatrix(int field, Symbol symbol) {
+        gameMatrix[field]= symbol;
     }
 
     public boolean isWinner(Symbol symbol) {
         //Check if there are some 'O' or 'X' in line: 00 01 02 | 10 11 12 | 20 21 22 | 00 10 20 | 01 11 21 | 02 12 22
         // or to the cross: 00 11 22 | 02 11 20.
-        return gameMatrix[0][0] == symbol && gameMatrix[0][1] == symbol && gameMatrix[0][2] == symbol
-                || gameMatrix[1][0] == symbol && gameMatrix[1][1] == symbol && gameMatrix[1][2] == symbol
-                || gameMatrix[2][0] == symbol && gameMatrix[2][1] == symbol && gameMatrix[2][2] == symbol
-                || gameMatrix[0][0] == symbol && gameMatrix[1][0] == symbol && gameMatrix[2][0] == symbol
-                || gameMatrix[0][1] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][1] == symbol
-                || gameMatrix[0][2] == symbol && gameMatrix[1][2] == symbol && gameMatrix[2][2] == symbol
-                || gameMatrix[0][0] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][2] == symbol
-                || gameMatrix[0][2] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][0] == symbol;
+        return     gameMatrix[0] == symbol && gameMatrix[1] == symbol && gameMatrix[2] == symbol // 1st row
+                || gameMatrix[3] == symbol && gameMatrix[4] == symbol && gameMatrix[5] == symbol // 2nd row
+                || gameMatrix[6] == symbol && gameMatrix[7] == symbol && gameMatrix[8] == symbol // 3rd row
+                || gameMatrix[0] == symbol && gameMatrix[3] == symbol && gameMatrix[6] == symbol // 1st column
+                || gameMatrix[1] == symbol && gameMatrix[4] == symbol && gameMatrix[7] == symbol // 2nd column
+                || gameMatrix[2] == symbol && gameMatrix[5] == symbol && gameMatrix[8] == symbol // 3rd column
+                || gameMatrix[0] == symbol && gameMatrix[4] == symbol && gameMatrix[8] == symbol // diagonal
+                || gameMatrix[6] == symbol && gameMatrix[4] == symbol && gameMatrix[2] == symbol; // diagonal
     }
 
     public boolean isDraw () {
-        return gameMatrix[0][0] != Symbol.EMPTY && gameMatrix[0][1] != Symbol.EMPTY && gameMatrix[0][2] != Symbol.EMPTY
-                && gameMatrix[1][0] != Symbol.EMPTY && gameMatrix[1][1] != Symbol.EMPTY && gameMatrix[1][2] != Symbol.EMPTY
-                && gameMatrix[2][0] != Symbol.EMPTY && gameMatrix[2][1] != Symbol.EMPTY && gameMatrix[2][2] != Symbol.EMPTY;
+        return gameMatrix[0] != Symbol.EMPTY && gameMatrix[1] != Symbol.EMPTY && gameMatrix[2] != Symbol.EMPTY
+                && gameMatrix[3] != Symbol.EMPTY && gameMatrix[4] != Symbol.EMPTY && gameMatrix[5] != Symbol.EMPTY
+                && gameMatrix[6] != Symbol.EMPTY && gameMatrix[7] != Symbol.EMPTY && gameMatrix[8] != Symbol.EMPTY;
     }
 
 
@@ -56,6 +54,7 @@ public class GameMatrix {
          */
 
         // check rows
+        /*
         for (int i = 0; i < gameMatrix.length; i++) {
             int symbolCounter = 0;
             for (int j = 0; j < gameMatrix.length; j++) {
@@ -141,7 +140,11 @@ public class GameMatrix {
             }
         }
         result[0] = 0; // there is no 2 symbols in a row/column/diagonal or possible move is blocked by opponent
+
+         */
         return result;
+
+
     }
 
 
@@ -150,16 +153,15 @@ public class GameMatrix {
             if (i == 0) {
                 System.out.println("---------");
             }
-            for (int j = 0; j < gameMatrix.length; j++) {
-                if (j == 0) {
-                    System.out.print("| ");
-                }
-                System.out.print(gameMatrix[i][j].getSymbol() + " ");
-                if (j == gameMatrix.length - 1) {
-                    System.out.print("|");
-                }
+            if (i == 0 || i == 3 || i == 6) {
+                System.out.print("| ");
             }
-            System.out.println();
+            System.out.print(gameMatrix[i].getSymbol() + " ");
+            if (i == 2 || i == 5 || i == 8) {
+                System.out.print("|");
+                System.out.println();
+            }
+
             if (i == gameMatrix.length - 1) {
                 System.out.println("---------");
             }
