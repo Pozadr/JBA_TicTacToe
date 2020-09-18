@@ -3,7 +3,7 @@ package tictactoe;
 import java.util.ArrayList;
 
 public class GameMatrix {
-    public final Symbol[] gameMatrix;
+    private final Symbol[] gameMatrix;
 
     /**
      * Game Matrix -  0, 1, 2,
@@ -15,6 +15,10 @@ public class GameMatrix {
         gameMatrix = new Symbol[] { Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY,
                                     Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY,
                                     Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY};
+    }
+
+    public Symbol[] getGameMatrix() {
+        return gameMatrix;
     }
 
     protected boolean isFieldOfMatrixFree(int field) {
@@ -30,7 +34,7 @@ public class GameMatrix {
      * @param symbol - symbol to check on matrix.
      * @return - winner / no winner
      */
-    public boolean isWinner(Symbol symbol) {
+    public boolean isWinner(Symbol[] gameMatrix, Symbol symbol) {
         return     gameMatrix[0] == symbol && gameMatrix[1] == symbol && gameMatrix[2] == symbol // 1st row
                 || gameMatrix[3] == symbol && gameMatrix[4] == symbol && gameMatrix[5] == symbol // 2nd row
                 || gameMatrix[6] == symbol && gameMatrix[7] == symbol && gameMatrix[8] == symbol // 3rd row
@@ -41,7 +45,7 @@ public class GameMatrix {
                 || gameMatrix[6] == symbol && gameMatrix[4] == symbol && gameMatrix[2] == symbol; // diagonal
     }
 
-    public boolean isDraw () {
+    public boolean isDraw (Symbol[] gameMatrix) {
         return gameMatrix[0] != Symbol.EMPTY && gameMatrix[1] != Symbol.EMPTY && gameMatrix[2] != Symbol.EMPTY
                 && gameMatrix[3] != Symbol.EMPTY && gameMatrix[4] != Symbol.EMPTY && gameMatrix[5] != Symbol.EMPTY
                 && gameMatrix[6] != Symbol.EMPTY && gameMatrix[7] != Symbol.EMPTY && gameMatrix[8] != Symbol.EMPTY;

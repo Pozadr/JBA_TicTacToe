@@ -21,7 +21,7 @@ public class AIMedium extends Player {
         int[] checkingResult = matrix.checkFieldToWinNextMove(symbol).clone();
         // check if you can win
         if(checkingResult[0] == 1) {
-            matrix.gameMatrix[checkingResult[1]] = symbol;
+            matrix.getGameMatrix()[checkingResult[1]] = symbol;
         } else {
             // check if opponent can win
             if (this.symbol == Symbol.O) {
@@ -30,7 +30,7 @@ public class AIMedium extends Player {
                 checkingResult = matrix.checkFieldToWinNextMove(Symbol.O);
             }
             if(checkingResult[0] == 1) {
-                matrix.gameMatrix[checkingResult[1]] = symbol;
+                matrix.getGameMatrix()[checkingResult[1]] = symbol;
             } else {
                 // make a random move
                 while (true) {
