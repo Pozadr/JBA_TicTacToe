@@ -17,6 +17,11 @@ public class GameMatrix {
                                     Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY};
     }
 
+    // Copy constructor
+    public GameMatrix(GameMatrix matrix) {
+        this.gameMatrix = matrix.getGameMatrix().clone();
+    }
+
     public Symbol[] getGameMatrix() {
         return gameMatrix;
     }
@@ -34,7 +39,7 @@ public class GameMatrix {
      * @param symbol - symbol to check on matrix.
      * @return - winner / no winner
      */
-    public boolean isWinner(Symbol[] gameMatrix, Symbol symbol) {
+    public boolean isWinner( Symbol symbol) {
         return     gameMatrix[0] == symbol && gameMatrix[1] == symbol && gameMatrix[2] == symbol // 1st row
                 || gameMatrix[3] == symbol && gameMatrix[4] == symbol && gameMatrix[5] == symbol // 2nd row
                 || gameMatrix[6] == symbol && gameMatrix[7] == symbol && gameMatrix[8] == symbol // 3rd row
@@ -45,7 +50,7 @@ public class GameMatrix {
                 || gameMatrix[6] == symbol && gameMatrix[4] == symbol && gameMatrix[2] == symbol; // diagonal
     }
 
-    public boolean isDraw (Symbol[] gameMatrix) {
+    public boolean isDraw () {
         return gameMatrix[0] != Symbol.EMPTY && gameMatrix[1] != Symbol.EMPTY && gameMatrix[2] != Symbol.EMPTY
                 && gameMatrix[3] != Symbol.EMPTY && gameMatrix[4] != Symbol.EMPTY && gameMatrix[5] != Symbol.EMPTY
                 && gameMatrix[6] != Symbol.EMPTY && gameMatrix[7] != Symbol.EMPTY && gameMatrix[8] != Symbol.EMPTY;
@@ -152,7 +157,7 @@ public class GameMatrix {
         return result; // {0, 0}
     }
 
-    protected ArrayList<Integer> checkEmptyFields() {
+    protected ArrayList<Integer> checkEmptyFields(Symbol[] gameMatrix) {
         ArrayList<Integer> result = new ArrayList<Integer>();
         for (int i = 0; i < gameMatrix.length; i++) {
             if (isFieldOfMatrixFree(i)) {

@@ -499,20 +499,6 @@ files:
         }
     }
   learner_created: true
-- name: src/tictactoe/AIHard.java
-  visible: true
-  text: |
-    package tictactoe;
-
-    public class AIHard extends Player{
-        Symbol symbol;
-        public AIHard (Symbol symbol) {
-            this.symbol = symbol;
-        }
-
-
-    }
-  learner_created: true
 - name: src/tictactoe/User.java
   visible: true
   text: |
@@ -817,6 +803,16 @@ files:
          */
     }
   learner_created: true
+- name: src/tictactoe/AIHard.java
+  visible: true
+  learner_created: true
+- name: src/tictactoe/Move.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/81/stages/451/implement
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/81/stages/451/implement">JetBrains
+    Academy</a>
+  time: Mon, 21 Sep 2020 19:49:44 UTC
 record: -1
