@@ -26,8 +26,8 @@ public class User extends Player {
                     // check if coordinates are not 0. Should be range <1-3>.
                     if (xCoordinate >= 1 && xCoordinate <= 3 && yCoordinate >= 1 && yCoordinate <= 3 ) {
                         // if cell is empty
-                        if (matrix.isFieldOfMatrixFree(xCoordinate, yCoordinate)) {
-                            matrix.setFieldOfMatrix(xCoordinate, yCoordinate, symbol);
+                        if (matrix.isFieldOfMatrixFreeUser(xCoordinate, yCoordinate)) {
+                            matrix.setFieldOfMatrixUser(xCoordinate, yCoordinate, symbol);
                             break; // break while loop
                         } else {
                             System.out.println("This cell is occupied! Choose another one!");

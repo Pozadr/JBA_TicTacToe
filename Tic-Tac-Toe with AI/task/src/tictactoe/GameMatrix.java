@@ -3,6 +3,17 @@ package tictactoe;
 public class GameMatrix {
     public final Symbol[][] gameMatrix;
 
+    /**
+     * Game Matrix -  AI board fields numbering:
+     *                (0 0) (0 1) (0 2)
+     *                (1 0) (1 1) (1 2)
+     *                (2 0) (2 1) (2 2)
+     *
+     *                User board fields numbering required by task:
+     *                (1 3) (2 3) (3 3)
+     *                (1 2) (2 2) (3 2)
+     *                (1 1) (2 1) (3 1)
+     */
     public GameMatrix() {
         gameMatrix = new Symbol[][]{
                 {Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY},
@@ -11,14 +22,15 @@ public class GameMatrix {
         };
     }
 
-    public boolean isFieldOfMatrixFree(int x, int y) {
-        int column = x - 1;
-        int row = 3 - y;
-
-        return gameMatrix[row][column] == Symbol.EMPTY;
+    public boolean isFieldOfMatrixFreeUser(int x, int y) {
+        return gameMatrix[3 - y][x - 1] == Symbol.EMPTY;
     }
 
-    public void setFieldOfMatrix(int x, int y, Symbol symbol) {
+    public boolean isFieldOfMatrixFreeAI(int x, int y) {
+        return gameMatrix[x][y] == Symbol.EMPTY;
+    }
+
+    public void setFieldOfMatrixUser(int x, int y, Symbol symbol) {
         int column = x - 1;
         int row = 3 - y;
 
@@ -26,22 +38,29 @@ public class GameMatrix {
     }
 
     public boolean isWinner(Symbol symbol) {
-        //Check if there are some 'O' or 'X' in line: 00 01 02 | 10 11 12 | 20 21 22 | 00 10 20 | 01 11 21 | 02 12 22
-        // or to the cross: 00 11 22 | 02 11 20.
-        return gameMatrix[0][0] == symbol && gameMatrix[0][1] == symbol && gameMatrix[0][2] == symbol
-                || gameMatrix[1][0] == symbol && gameMatrix[1][1] == symbol && gameMatrix[1][2] == symbol
-                || gameMatrix[2][0] == symbol && gameMatrix[2][1] == symbol && gameMatrix[2][2] == symbol
-                || gameMatrix[0][0] == symbol && gameMatrix[1][0] == symbol && gameMatrix[2][0] == symbol
-                || gameMatrix[0][1] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][1] == symbol
-                || gameMatrix[0][2] == symbol && gameMatrix[1][2] == symbol && gameMatrix[2][2] == symbol
-                || gameMatrix[0][0] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][2] == symbol
-                || gameMatrix[0][2] == symbol && gameMatrix[1][1] == symbol && gameMatrix[2][0] == symbol;
+        if ((gameMatrix[0][0] == gameMatrix[1][1] && gameMatrix[0][0] == gameMatrix[2][2] && gameMatrix[0][0] == symbol) || (gameMatrix[0][2] == gameMatrix[1][1] && gameMatrix[0][2] == gameMatrix[2][0] && gameMatrix[0][2] == symbol)) {
+            //System.out.println("X Diagonal Win");
+            return true;
+        }
+        for (int i = 0; i < 3; ++i) {
+            if (((gameMatrix[i][0] == gameMatrix[i][1] && gameMatrix[i][0] == gameMatrix[i][2] && gameMatrix[i][0] == symbol)
+                    || (gameMatrix[0][i] == gameMatrix[1][i] && gameMatrix[0][i] == gameMatrix[2][i] && gameMatrix[0][i] == symbol))) {
+                // System.out.println("X Row or Column win");
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean isDraw () {
-        return gameMatrix[0][0] != Symbol.EMPTY && gameMatrix[0][1] != Symbol.EMPTY && gameMatrix[0][2] != Symbol.EMPTY
-                && gameMatrix[1][0] != Symbol.EMPTY && gameMatrix[1][1] != Symbol.EMPTY && gameMatrix[1][2] != Symbol.EMPTY
-                && gameMatrix[2][0] != Symbol.EMPTY && gameMatrix[2][1] != Symbol.EMPTY && gameMatrix[2][2] != Symbol.EMPTY;
+        for (Symbol[] matrix : gameMatrix) { // take whole row
+            for (int j = 0; j < gameMatrix.length; j++) { // increment each field of row
+                if (matrix[j] == Symbol.EMPTY) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 

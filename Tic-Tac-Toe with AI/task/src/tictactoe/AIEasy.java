@@ -22,8 +22,8 @@ public class AIEasy extends Player {
         while (true) {
             xCoordinate = random.nextInt(3 - 1 + 1) + 1; // Coordinates range <1-3>
             yCoordinate = random.nextInt(3 - 1 + 1) + 1;
-            if (matrix.isFieldOfMatrixFree(xCoordinate, yCoordinate)) {
-                matrix.setFieldOfMatrix(xCoordinate, yCoordinate, symbol);
+            if (matrix.isFieldOfMatrixFreeUser(xCoordinate, yCoordinate)) {
+                matrix.setFieldOfMatrixUser(xCoordinate, yCoordinate, symbol);
                 break; // break while loop
             }
         }
