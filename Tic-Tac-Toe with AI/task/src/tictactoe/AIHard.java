@@ -12,6 +12,7 @@ public class AIHard extends Player {
 
     @Override
     public void move(GameMatrix matrix) {
+        System.out.println("Making move level \"hard\"");
         minimax(matrix, 0, this.symbol);
         matrix.gameMatrix[bestMove.x][bestMove.y] = this.symbol;
 
@@ -48,7 +49,7 @@ public class AIHard extends Player {
                 matrix.gameMatrix[point.x][point.y] = this.symbol;
                 int currentScore = minimax(matrix,depth + 1, opponentSymbol);
                 max = Math.max(currentScore, max);
-                if (depth == 0) System.out.println("Score for position "+(i+1)+" = "+currentScore);
+                // if (depth == 0) System.out.println("Score for position "+(i+1)+" = "+currentScore); // testing sout
                 if (currentScore >= 0) {
                     if (depth == 0) {
                         bestMove = point;
