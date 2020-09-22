@@ -17,7 +17,7 @@ There is possibility to play:
 * user vs AI ( easy / medium / hard ) 
 * AI vs AI
 
-####User
+#### User
 User uses rotated two-dimensional array with coordinates ( 1 - 3 ) - request of the task.
 ```
 (1 3) (2 3) (3 3)
@@ -38,21 +38,21 @@ Enter the coordinates: 2 3
 |       |
 ---------
 ```
-####Easy
+#### Easy
 Easy AI level does random moves if field of the board is empty.
 
-####Medium
+#### Medium
 Medium AI level logic:
 1. Check can you win.
 2. Check can your opponent win. Block its move.
 3. If not 1. and not 2. then do a random move.
-####Hard
+#### Hard
 Hard AI level uses "minimax" algorithm. It simulates all possibilities until 
 game finish. Then it checks best possible movement. 
 There is no possibility to win with minimax algorithm. 
 Can be only the draw or lose..
 
-####Example game:
+#### Example game:
 
 To run the game type: *start player1 player2*
 

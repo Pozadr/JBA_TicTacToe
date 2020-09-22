@@ -23,6 +23,10 @@ public class AIHard extends Player {
      * Then check best possible movement for HardAI player.
      * There is no possibility to win with minimax algorithm. Can be only the draw or lose.
      *
+     * https://www.youtube.com/watch?v=trKjYdBASyQ
+     * https://github.com/CodingTrain/website/blob/master/CodingChallenges/CC_154_Tic_Tac_Toe_Minimax/P5/minimax.js
+     * http://www.codebytes.in/2014/08/minimax-algorithm-tic-tac-toe-ai-in.html
+     *
      * Optimized by breaking loops during searching for best score.
      * @param matrix - current gameMatrix state.
      * @param depth - depth of minimax algorithm recursion.
