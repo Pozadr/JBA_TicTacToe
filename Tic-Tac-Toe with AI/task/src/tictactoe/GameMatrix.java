@@ -17,10 +17,6 @@ public class GameMatrix {
                                     Symbol.EMPTY, Symbol.EMPTY, Symbol.EMPTY};
     }
 
-    // Copy constructor
-    public GameMatrix(GameMatrix matrix) {
-        this.gameMatrix = matrix.getGameMatrix().clone();
-    }
 
     public Symbol[] getGameMatrix() {
         return gameMatrix;
@@ -33,6 +29,7 @@ public class GameMatrix {
     protected void setFieldOfMatrix(int field, Symbol symbol) {
         gameMatrix[field]= symbol;
     }
+
 
     /**
      * Function check are 3 symbols in a row/column/diagonal.
@@ -50,11 +47,13 @@ public class GameMatrix {
                 || gameMatrix[6] == symbol && gameMatrix[4] == symbol && gameMatrix[2] == symbol; // diagonal
     }
 
+
     public boolean isDraw () {
         return gameMatrix[0] != Symbol.EMPTY && gameMatrix[1] != Symbol.EMPTY && gameMatrix[2] != Symbol.EMPTY
                 && gameMatrix[3] != Symbol.EMPTY && gameMatrix[4] != Symbol.EMPTY && gameMatrix[5] != Symbol.EMPTY
                 && gameMatrix[6] != Symbol.EMPTY && gameMatrix[7] != Symbol.EMPTY && gameMatrix[8] != Symbol.EMPTY;
     }
+
 
     /**
      * Function check is it possible to win with next move.
