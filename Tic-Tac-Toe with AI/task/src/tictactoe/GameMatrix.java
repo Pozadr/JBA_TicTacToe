@@ -1,5 +1,8 @@
 package tictactoe;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameMatrix {
     public final Symbol[][] gameMatrix;
 
@@ -22,19 +25,16 @@ public class GameMatrix {
         };
     }
 
-    public boolean isFieldOfMatrixFreeUser(int x, int y) {
+    public boolean isFieldOfRotatedMatrixFree(int x, int y) {
         return gameMatrix[3 - y][x - 1] == Symbol.EMPTY;
     }
 
-    public boolean isFieldOfMatrixFreeAI(int x, int y) {
+    public boolean isFieldOfMatrixFree(int x, int y) {
         return gameMatrix[x][y] == Symbol.EMPTY;
     }
 
-    public void setFieldOfMatrixUser(int x, int y, Symbol symbol) {
-        int column = x - 1;
-        int row = 3 - y;
-
-        gameMatrix[row][column] = symbol;
+    public void setFieldOfRotatedMatrix(int x, int y, Symbol symbol) {
+        gameMatrix[3 - y][x - 1] = symbol;
     }
 
     public boolean isWinner(Symbol symbol) {
@@ -64,7 +64,27 @@ public class GameMatrix {
     }
 
 
-    public int[] checkTwoInRow(Symbol symbol) {
+    public ArrayList<Point> getAvailableMoves() {
+        ArrayList<Point> availablePoints = new ArrayList<>();
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                if (gameMatrix[i][j] == Symbol.EMPTY) {
+                    availablePoints.add(new Point(i, j));
+                }
+            }
+        }
+        return availablePoints;
+    }
+
+    /**
+     * Function check is it possible to win with next move.
+     * May be used to check player move or to block next opponent move.
+     *
+     * @param symbol - which symbol should be search in matrix.
+     * @return - result [0] = two in row -> 1; not -> 0; result [1] = x; result [2] = y
+     *
+     */
+    public int[] checkFieldToWinNextMove(Symbol symbol) {
         int xCoordinate;
         int yCoordinate;
         int[] result = new int[3];
@@ -185,39 +205,4 @@ public class GameMatrix {
         }
     }
 
-    // ----------------------- OLD STUFF -----------------------
-    // Used in stage 1/5 - 2/5
-    /*
-    public void fillInitMatrix (String userGameLayoutInput) {
-        // userGameLayoutInput --> gameMatrix. String input used to fill two-dimensional array. Task 1/5.
-        int charCounter = 0;
-        for (int i = 0; i < gameMatrix.length; i++) {
-            for (int j = 0; j < gameMatrix.length; j++) {
-                if (userGameLayoutInput.charAt(charCounter) == '_') {
-                    gameMatrix[i][j] = Symbol.EMPTY;
-                } else if (userGameLayoutInput.charAt(charCounter) == 'X') {
-                    gameMatrix[i][j] = Symbol.X;
-                } else if (userGameLayoutInput.charAt(charCounter) == 'O') {
-                    gameMatrix[i][j] = Symbol.O;
-                }
-                charCounter++;
-            }
-        }
-    }
-
-    private boolean checkXMoreThanO() {
-        int xCounter = 0;
-        int oCounter = 0;
-        for (int i = 0; i < gameMatrix.length; i++) {
-            for (int j = 0; j < gameMatrix.length; j++) {
-                if (gameMatrix[i][j] == Symbol.X) {
-                    xCounter++;
-                } else if (gameMatrix[i][j] == Symbol.O) {
-                    oCounter++;
-                }
-            }
-        }
-        return xCounter > oCounter;
-    }
-     */
 }

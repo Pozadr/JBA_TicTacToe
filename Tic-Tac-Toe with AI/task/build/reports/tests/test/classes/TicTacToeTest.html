@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.462s</div>
+<div class="counter">1.431s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">start</td>
-<td class="success">0.462s</td>
+<td class="success">1.431s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -105,26 +105,26 @@ Enter the coordinates: &gt; 1 1
 Making move level &quot;easy&quot;
 ---------
 |       |
-|     O |
-| X     |
+|       |
+| X   O |
 ---------
 Enter the coordinates: &gt; 1 2
 ---------
 |       |
-| X   O |
 | X     |
+| X   O |
 ---------
 Making move level &quot;easy&quot;
 ---------
 |       |
-| X   O |
-| X O   |
+| X     |
+| X O O |
 ---------
 Enter the coordinates: &gt; 1 3
 ---------
 | X     |
-| X   O |
-| X O   |
+| X     |
+| X O O |
 ---------
 X wins
 Input command: 
@@ -374,7 +374,7 @@ Input command:
 ---------
 Making move level &quot;easy&quot;
 ---------
-|     X |
+|   X   |
 |       |
 |       |
 ---------
@@ -382,53 +382,59 @@ Enter the coordinates: &gt; 4 1
 Coordinates should be from 1 to 3!
 Enter the coordinates: &gt; 1 2
 ---------
-|     X |
+|   X   |
 | O     |
 |       |
 ---------
 Making move level &quot;easy&quot;
 ---------
-|     X |
+|   X   |
 | O     |
-| X     |
+|     X |
 ---------
 Enter the coordinates: &gt; 1 3
 ---------
-| O   X |
+| O X   |
 | O     |
-| X     |
+|     X |
 ---------
 Making move level &quot;easy&quot;
 ---------
-| O   X |
-| O     |
-| X   X |
+| O X   |
+| O X   |
+|     X |
 ---------
 Enter the coordinates: &gt; 2 1
 ---------
-| O   X |
-| O     |
+| O X   |
+| O X   |
+|   O X |
+---------
+Making move level &quot;easy&quot;
+---------
+| O X   |
+| O X   |
+| X O X |
+---------
+Enter the coordinates: &gt; 2 2
+This cell is occupied! Choose another one!
+Enter the coordinates: &gt; 2 3
+This cell is occupied! Choose another one!
+Enter the coordinates: &gt; 3 1
+This cell is occupied! Choose another one!
+Enter the coordinates: &gt; 3 2
+---------
+| O X   |
+| O X O |
 | X O X |
 ---------
 Making move level &quot;easy&quot;
 ---------
-| O   X |
-| O X   |
+| O X X |
+| O X O |
 | X O X |
 ---------
 X wins
-Input command: 
-&gt; 2 2
-Bad parameters!
-Input command: 
-&gt; 2 3
-Bad parameters!
-Input command: 
-&gt; 3 1
-Bad parameters!
-Input command: 
-&gt; 3 2
-Bad parameters!
 Input command: 
 &gt; 3 3
 Bad parameters!
@@ -707,44 +713,41 @@ Enter the coordinates: &gt; 2 1
 Making move level &quot;medium&quot;
 ---------
 | X O   |
-|       |
-| O X   |
+|   O   |
+|   X   |
 ---------
 Enter the coordinates: &gt; 2 2
----------
-| X O   |
-|   X   |
-| O X   |
----------
-Making move level &quot;medium&quot;
----------
-| X O   |
-|   X   |
-| O X O |
----------
+This cell is occupied! Choose another one!
 Enter the coordinates: &gt; 2 3
 This cell is occupied! Choose another one!
 Enter the coordinates: &gt; 3 1
-This cell is occupied! Choose another one!
-Enter the coordinates: &gt; 3 2
 ---------
 | X O   |
+|   O   |
 |   X X |
-| O X O |
 ---------
 Making move level &quot;medium&quot;
 ---------
 | X O   |
+|   O   |
 | O X X |
-| O X O |
 ---------
-Enter the coordinates: &gt; 3 3
+Enter the coordinates: &gt; 3 2
 ---------
-| X O X |
+| X O   |
+|   O X |
 | O X X |
-| O X O |
 ---------
-Draw
+Making move level &quot;medium&quot;
+---------
+| X O O |
+|   O X |
+| O X X |
+---------
+O wins
+Input command: 
+&gt; 3 3
+Bad parameters!
 Input command: 
 &gt; 1 1
 Bad parameters!
@@ -980,65 +983,57 @@ Input command:
 ---------
 Making move level &quot;medium&quot;
 ---------
-|       |
-|       |
 |     X |
+|       |
+|       |
 ---------
 Enter the coordinates: &gt; 4 3
 Coordinates should be from 1 to 3!
 Enter the coordinates: &gt; 2 1
 ---------
+|     X |
 |       |
-|       |
-|   O X |
+|   O   |
 ---------
 Making move level &quot;medium&quot;
 ---------
-|       |
+|     X |
 | X     |
-|   O X |
+|   O   |
 ---------
 Enter the coordinates: &gt; 2 2
 ---------
-|       |
+|     X |
 | X O   |
-|   O X |
+|   O   |
 ---------
 Making move level &quot;medium&quot;
 ---------
-|   X   |
+|   X X |
 | X O   |
-|   O X |
+|   O   |
 ---------
 Enter the coordinates: &gt; 2 3
 This cell is occupied! Choose another one!
 Enter the coordinates: &gt; 3 1
-This cell is occupied! Choose another one!
-Enter the coordinates: &gt; 3 2
 ---------
-|   X   |
-| X O O |
-|   O X |
+|   X X |
+| X O   |
+|   O O |
 ---------
 Making move level &quot;medium&quot;
 ---------
-| X X   |
-| X O O |
-|   O X |
----------
-Enter the coordinates: &gt; 3 3
----------
-| X X O |
-| X O O |
-|   O X |
----------
-Making move level &quot;medium&quot;
----------
-| X X O |
-| X O O |
-| X O X |
+| X X X |
+| X O   |
+|   O O |
 ---------
 X wins
+Input command: 
+&gt; 3 2
+Bad parameters!
+Input command: 
+&gt; 3 3
+Bad parameters!
 Input command: 
 &gt; 1 1
 Bad parameters!
@@ -1293,7 +1288,7 @@ Input command:
 ?[1;31m
 Start test 5?[0m
 Input command: 
-&gt; start user easy
+&gt; start user hard
 ---------
 |       |
 |       |
@@ -1305,61 +1300,66 @@ Enter the coordinates: &gt; 2 2
 |   X   |
 |       |
 ---------
-Making move level &quot;easy&quot;
+Score for position 1 = 0
+Score for position 2 = -10
+Score for position 3 = 0
+Score for position 4 = -10
+Score for position 5 = -10
+Score for position 6 = 0
+Score for position 7 = -10
+Score for position 8 = 0
 ---------
-|   O   |
-|   X   |
 |       |
+|   X   |
+|     O |
 ---------
 Enter the coordinates: &gt; 2 3
-This cell is occupied! Choose another one!
+---------
+|   X   |
+|   X   |
+|     O |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = -10
+Score for position 4 = -10
+Score for position 5 = -10
+Score for position 6 = 0
+---------
+|   X   |
+|   X   |
+|   O O |
+---------
 Enter the coordinates: &gt; 3 1
----------
-|   O   |
-|   X   |
-|     X |
----------
-Making move level &quot;easy&quot;
----------
-|   O   |
-|   X   |
-|   O X |
----------
+This cell is occupied! Choose another one!
 Enter the coordinates: &gt; 3 2
 ---------
-|   O   |
+|   X   |
 |   X X |
-|   O X |
----------
-Making move level &quot;easy&quot;
----------
 |   O O |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = 0
+Score for position 4 = 10
+---------
+|   X   |
 |   X X |
-|   O X |
+| O O O |
 ---------
-Enter the coordinates: &gt; 3 3
-This cell is occupied! Choose another one!
-Enter the coordinates: &gt; 1 1
----------
-|   O O |
-|   X X |
-| X O X |
----------
-Making move level &quot;easy&quot;
----------
-|   O O |
-| O X X |
-| X O X |
----------
-Enter the coordinates: &gt; 1 2
-This cell is occupied! Choose another one!
-Enter the coordinates: &gt; 1 3
----------
-| X O O |
-| O X X |
-| X O X |
----------
-X wins
+O wins
+Input command: 
+&gt; 3 3
+Bad parameters!
+Input command: 
+&gt; 1 1
+Bad parameters!
+Input command: 
+&gt; 1 2
+Bad parameters!
+Input command: 
+&gt; 1 3
+Bad parameters!
 Input command: 
 &gt; 2 1
 Bad parameters!
@@ -1584,13 +1584,21 @@ Input command:
 ?[1;31m
 Start test 6?[0m
 Input command: 
-&gt; start easy user
+&gt; start hard user
 ---------
 |       |
 |       |
 |       |
 ---------
-Making move level &quot;easy&quot;
+Score for position 1 = 0
+Score for position 2 = 0
+Score for position 3 = 0
+Score for position 4 = 0
+Score for position 5 = 0
+Score for position 6 = 0
+Score for position 7 = 0
+Score for position 8 = 0
+Score for position 9 = 0
 ---------
 |       |
 |       |
@@ -1604,49 +1612,42 @@ Enter the coordinates: &gt; 2 3
 |       |
 |     X |
 ---------
-Making move level &quot;easy&quot;
+Score for position 1 = 0
+Score for position 2 = 10
 ---------
-|   O   |
+|   O X |
 |       |
-|   X X |
+|     X |
 ---------
 Enter the coordinates: &gt; 3 1
 This cell is occupied! Choose another one!
 Enter the coordinates: &gt; 3 2
 ---------
-|   O   |
+|   O X |
 |     O |
-|   X X |
+|     X |
 ---------
-Making move level &quot;easy&quot;
+Score for position 1 = -10
+Score for position 2 = 0
+Score for position 3 = 10
 ---------
-| X O   |
-|     O |
-|   X X |
+|   O X |
+|   X O |
+|     X |
 ---------
 Enter the coordinates: &gt; 3 3
----------
-| X O O |
-|     O |
-|   X X |
----------
-Making move level &quot;easy&quot;
----------
-| X O O |
-| X   O |
-|   X X |
----------
+This cell is occupied! Choose another one!
 Enter the coordinates: &gt; 1 1
 ---------
-| X O O |
-| X   O |
-| O X X |
+|   O X |
+|   X O |
+| O   X |
 ---------
-Making move level &quot;easy&quot;
+Score for position 1 = 10
 ---------
-| X O O |
-| X X O |
-| O X X |
+| X O X |
+|   X O |
+| O   X |
 ---------
 X wins
 Input command: 
@@ -1906,7 +1907,7 @@ Input command:
 ?[1;31m
 Start test 7?[0m
 Input command: 
-&gt; start user medium
+&gt; start user easy
 ---------
 |       |
 |       |
@@ -1918,63 +1919,62 @@ Enter the coordinates: &gt; 3 1
 |       |
 |     X |
 ---------
-Making move level &quot;medium&quot;
+Making move level &quot;easy&quot;
 ---------
 |       |
 |       |
-|   O X |
+| O   X |
 ---------
 Enter the coordinates: &gt; 3 2
 ---------
 |       |
 |     X |
-|   O X |
+| O   X |
 ---------
-Making move level &quot;medium&quot;
+Making move level &quot;easy&quot;
 ---------
 |     O |
 |     X |
-|   O X |
+| O   X |
 ---------
 Enter the coordinates: &gt; 3 3
 This cell is occupied! Choose another one!
 Enter the coordinates: &gt; 1 1
----------
-|     O |
-|     X |
-| X O X |
----------
-Making move level &quot;medium&quot;
----------
-|     O |
-| O   X |
-| X O X |
----------
-Enter the coordinates: &gt; 1 2
 This cell is occupied! Choose another one!
+Enter the coordinates: &gt; 1 2
+---------
+|     O |
+| X   X |
+| O   X |
+---------
+Making move level &quot;easy&quot;
+---------
+|     O |
+| X   X |
+| O O X |
+---------
 Enter the coordinates: &gt; 1 3
 ---------
 | X   O |
-| O   X |
-| X O X |
+| X   X |
+| O O X |
 ---------
-Making move level &quot;medium&quot;
+Making move level &quot;easy&quot;
 ---------
 | X   O |
-| O O X |
 | X O X |
----------
-Enter the coordinates: &gt; 2 1
-This cell is occupied! Choose another one!
-Enter the coordinates: &gt; 2 2
-This cell is occupied! Choose another one!
-Enter the coordinates: &gt; 2 3
----------
-| X X O |
 | O O X |
-| X O X |
 ---------
-Draw
+O wins
+Input command: 
+&gt; 2 1
+Bad parameters!
+Input command: 
+&gt; 2 2
+Bad parameters!
+Input command: 
+&gt; 2 3
+Bad parameters!
 Input command: 
 &gt; 3 1
 Bad parameters!
@@ -2196,60 +2196,69 @@ Input command:
 ?[1;31m
 Start test 8?[0m
 Input command: 
-&gt; start medium user
+&gt; start easy user
 ---------
 |       |
 |       |
 |       |
 ---------
-Making move level &quot;medium&quot;
+Making move level &quot;easy&quot;
 ---------
 |       |
-| X     |
+|     X |
 |       |
 ---------
 Enter the coordinates: &gt; 4 7
 Coordinates should be from 1 to 3!
 Enter the coordinates: &gt; 3 2
----------
-|       |
-| X   O |
-|       |
----------
-Making move level &quot;medium&quot;
----------
-|       |
-| X   O |
-| X     |
----------
+This cell is occupied! Choose another one!
 Enter the coordinates: &gt; 3 3
 ---------
 |     O |
-| X   O |
-| X     |
+|     X |
+|       |
 ---------
-Making move level &quot;medium&quot;
+Making move level &quot;easy&quot;
 ---------
-| X   O |
-| X   O |
-| X     |
+|     O |
+| X   X |
+|       |
 ---------
-X wins
-Input command: 
-&gt; 1 1
-Bad parameters!
-Input command: 
-&gt; 1 2
-Bad parameters!
-Input command: 
-&gt; 1 3
-Bad parameters!
-Input command: 
-&gt; 2 1
-Bad parameters!
-Input command: 
-&gt; 2 2
-Bad parameters!
+Enter the coordinates: &gt; 1 1
+---------
+|     O |
+| X   X |
+| O     |
+---------
+Making move level &quot;easy&quot;
+---------
+|     O |
+| X   X |
+| O X   |
+---------
+Enter the coordinates: &gt; 1 2
+This cell is occupied! Choose another one!
+Enter the coordinates: &gt; 1 3
+---------
+| O   O |
+| X   X |
+| O X   |
+---------
+Making move level &quot;easy&quot;
+---------
+| O X O |
+| X   X |
+| O X   |
+---------
+Enter the coordinates: &gt; 2 1
+This cell is occupied! Choose another one!
+Enter the coordinates: &gt; 2 2
+---------
+| O X O |
+| X O X |
+| O X   |
+---------
+O wins
 Input command: 
 &gt; 2 3
 Bad parameters!
@@ -2501,7 +2510,7 @@ Input command:
 ?[1;31m
 Start test 9?[0m
 Input command: 
-&gt; start user easy
+&gt; start user medium
 ---------
 |       |
 |       |
@@ -2513,47 +2522,54 @@ Enter the coordinates: &gt; 3 3
 |       |
 |       |
 ---------
-Making move level &quot;easy&quot;
+Making move level &quot;medium&quot;
 ---------
 |     X |
-| O     |
+|     O |
 |       |
 ---------
 Enter the coordinates: &gt; 1 1
 ---------
 |     X |
-| O     |
+|     O |
 | X     |
 ---------
-Making move level &quot;easy&quot;
+Making move level &quot;medium&quot;
 ---------
 |     X |
-| O   O |
+|   O O |
 | X     |
 ---------
 Enter the coordinates: &gt; 1 2
-This cell is occupied! Choose another one!
-Enter the coordinates: &gt; 1 3
 ---------
-| X   X |
-| O   O |
+|     X |
+| X O O |
 | X     |
 ---------
-Making move level &quot;easy&quot;
+Making move level &quot;medium&quot;
 ---------
-| X   X |
-| O   O |
-| X O   |
+| O   X |
+| X O O |
+| X     |
 ---------
-Enter the coordinates: &gt; 2 1
+Enter the coordinates: &gt; 1 3
 This cell is occupied! Choose another one!
-Enter the coordinates: &gt; 2 2
+Enter the coordinates: &gt; 2 1
 ---------
-| X   X |
-| O X O |
-| X O   |
+| O   X |
+| X O O |
+| X X   |
 ---------
-X wins
+Making move level &quot;medium&quot;
+---------
+| O   X |
+| X O O |
+| X X O |
+---------
+O wins
+Input command: 
+&gt; 2 2
+Bad parameters!
 Input command: 
 &gt; 2 3
 Bad parameters!
@@ -2792,53 +2808,59 @@ Input command:
 ---------
 Making move level &quot;easy&quot;
 ---------
+| X     |
 |       |
 |       |
-|     X |
 ---------
 Making move level &quot;easy&quot;
 ---------
-| O     |
+| X O   |
 |       |
-|     X |
+|       |
 ---------
 Making move level &quot;easy&quot;
 ---------
-| O     |
-|     X |
-|     X |
+| X O   |
+|   X   |
+|       |
 ---------
 Making move level &quot;easy&quot;
 ---------
-| O     |
-|   O X |
-|     X |
----------
-Making move level &quot;easy&quot;
----------
+| X O   |
 | O X   |
-|   O X |
-|     X |
+|       |
 ---------
 Making move level &quot;easy&quot;
 ---------
-| O X   |
-|   O X |
-| O   X |
+| X O   |
+| O X X |
+|       |
 ---------
 Making move level &quot;easy&quot;
 ---------
-| O X   |
+| X O   |
+| O X X |
+|     O |
+---------
+Making move level &quot;easy&quot;
+---------
+| X O   |
+| O X X |
+| X   O |
+---------
+Making move level &quot;easy&quot;
+---------
+| X O   |
+| O X X |
+| X O O |
+---------
+Making move level &quot;easy&quot;
+---------
 | X O X |
-| O   X |
+| O X X |
+| X O O |
 ---------
-Making move level &quot;easy&quot;
----------
-| O X O |
-| X O X |
-| O   X |
----------
-O wins
+X wins
 Input command: 
 &gt; exit
 ?[1;31m
@@ -2852,57 +2874,165 @@ Input command:
 ---------
 Making move level &quot;medium&quot;
 ---------
-|     X |
+| X     |
 |       |
 |       |
 ---------
 Making move level &quot;medium&quot;
 ---------
-|   O X |
-|       |
+| X     |
+|   O   |
 |       |
 ---------
 Making move level &quot;medium&quot;
 ---------
-|   O X |
+| X   X |
+|   O   |
 |       |
-|     X |
----------
-Making move level &quot;medium&quot;
----------
-|   O X |
-|     O |
-|     X |
 ---------
 Making move level &quot;medium&quot;
 ---------
 | X O X |
-|     O |
-|     X |
+|   O   |
+|       |
 ---------
 Making move level &quot;medium&quot;
 ---------
 | X O X |
-|   O O |
-|     X |
+|   O   |
+|   X   |
 ---------
 Making move level &quot;medium&quot;
 ---------
 | X O X |
-| X O O |
-|     X |
+|   O   |
+|   X O |
 ---------
 Making move level &quot;medium&quot;
 ---------
 | X O X |
-| X O O |
-|   O X |
+| X O   |
+|   X O |
 ---------
-O wins
+Making move level &quot;medium&quot;
+---------
+| X O X |
+| X O   |
+| O X O |
+---------
+Making move level &quot;medium&quot;
+---------
+| X O X |
+| X O X |
+| O X O |
+---------
+Draw
 Input command: 
 &gt; exit
 ?[1;31m
 Start test 12?[0m
+Input command: 
+&gt; start hard hard
+---------
+|       |
+|       |
+|       |
+---------
+Score for position 1 = 0
+Score for position 2 = 0
+Score for position 3 = 0
+Score for position 4 = 0
+Score for position 5 = 0
+Score for position 6 = 0
+Score for position 7 = 0
+Score for position 8 = 0
+Score for position 9 = 0
+---------
+|       |
+|       |
+|     X |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = -10
+Score for position 4 = -10
+Score for position 5 = 0
+Score for position 6 = -10
+Score for position 7 = -10
+Score for position 8 = -10
+---------
+|       |
+|   O   |
+|     X |
+---------
+Score for position 1 = 0
+Score for position 2 = 0
+Score for position 3 = 0
+Score for position 4 = 0
+Score for position 5 = 0
+Score for position 6 = 0
+Score for position 7 = 0
+---------
+|       |
+|   O   |
+|   X X |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = -10
+Score for position 4 = -10
+Score for position 5 = -10
+Score for position 6 = 0
+---------
+|       |
+|   O   |
+| O X X |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = 0
+Score for position 4 = -10
+Score for position 5 = -10
+---------
+|     X |
+|   O   |
+| O X X |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = -10
+Score for position 4 = 0
+---------
+|     X |
+|   O O |
+| O X X |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = 0
+---------
+|     X |
+| X O O |
+| O X X |
+---------
+Score for position 1 = 0
+Score for position 2 = 0
+---------
+|   O X |
+| X O O |
+| O X X |
+---------
+Score for position 1 = 0
+---------
+| X O X |
+| X O O |
+| O X X |
+---------
+Draw
+Input command: 
+&gt; exit
+?[1;31m
+Start test 13?[0m
 Input command: 
 &gt; start medium easy
 ---------
@@ -2912,39 +3042,51 @@ Input command:
 ---------
 Making move level &quot;medium&quot;
 ---------
-|     X |
 |       |
 |       |
+|   X   |
 ---------
 Making move level &quot;easy&quot;
 ---------
-|     X |
-| O     |
 |       |
+|       |
+| O X   |
 ---------
 Making move level &quot;medium&quot;
 ---------
-|     X |
-| O     |
-| X     |
----------
-Making move level &quot;easy&quot;
----------
-|     X |
-| O     |
-| X   O |
----------
-Making move level &quot;medium&quot;
----------
+|       |
 |     X |
 | O X   |
-| X   O |
+---------
+Making move level &quot;easy&quot;
+---------
+|       |
+|   O X |
+| O X   |
+---------
+Making move level &quot;medium&quot;
+---------
+|     X |
+|   O X |
+| O X   |
+---------
+Making move level &quot;easy&quot;
+---------
+|   O X |
+|   O X |
+| O X   |
+---------
+Making move level &quot;medium&quot;
+---------
+|   O X |
+|   O X |
+| O X X |
 ---------
 X wins
 Input command: 
 &gt; exit
 ?[1;31m
-Start test 13?[0m
+Start test 14?[0m
 Input command: 
 &gt; start easy medium
 ---------
@@ -2960,51 +3102,335 @@ Making move level &quot;easy&quot;
 ---------
 Making move level &quot;medium&quot;
 ---------
+|       |
+|   X   |
 |     O |
-|   X   |
+---------
+Making move level &quot;easy&quot;
+---------
 |       |
+| X X   |
+|     O |
 ---------
-Making move level &quot;easy&quot;
+Making move level &quot;medium&quot;
 ---------
-|   X O |
-|   X   |
 |       |
----------
-Making move level &quot;medium&quot;
----------
-|   X O |
-|   X   |
-|   O   |
+| X X O |
+|     O |
 ---------
 Making move level &quot;easy&quot;
 ---------
+|       |
 | X X O |
-|   X   |
-|   O   |
+| X   O |
 ---------
 Making move level &quot;medium&quot;
 ---------
+|     O |
 | X X O |
-|   X   |
-|   O O |
----------
-Making move level &quot;easy&quot;
----------
-| X X O |
-| X X   |
-|   O O |
----------
-Making move level &quot;medium&quot;
----------
-| X X O |
-| X X   |
-| O O O |
+| X   O |
 ---------
 O wins
 Input command: 
 &gt; exit
 ?[1;31m
-Start test 14?[0m
+Start test 15?[0m
+Input command: 
+&gt; start medium hard
+---------
+|       |
+|       |
+|       |
+---------
+Making move level &quot;medium&quot;
+---------
+|     X |
+|       |
+|       |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = -10
+Score for position 4 = 0
+Score for position 5 = -10
+Score for position 6 = -10
+Score for position 7 = -10
+Score for position 8 = -10
+---------
+|     X |
+|   O   |
+|       |
+---------
+Making move level &quot;medium&quot;
+---------
+|     X |
+|   O   |
+|   X   |
+---------
+Score for position 1 = -10
+Score for position 2 = -10
+Score for position 3 = 0
+Score for position 4 = 0
+Score for position 5 = 0
+Score for position 6 = 0
+---------
+|     X |
+|   O   |
+|   X O |
+---------
+Making move level &quot;medium&quot;
+---------
+| X   X |
+|   O   |
+|   X O |
+---------
+Score for position 1 = 0
+Score for position 2 = -10
+Score for position 3 = -10
+Score for position 4 = -10
+---------
+| X O X |
+|   O   |
+|   X O |
+---------
+Making move level &quot;medium&quot;
+---------
+| X O X |
+|   O   |
+| X X O |
+---------
+Score for position 1 = 0
+Score for position 2 = -10
+---------
+| X O X |
+| O O   |
+| X X O |
+---------
+Making move level &quot;medium&quot;
+---------
+| X O X |
+| O O X |
+| X X O |
+---------
+Draw
+Input command: 
+&gt; exit
+?[1;31m
+Start test 16?[0m
+Input command: 
+&gt; start hard medium
+---------
+|       |
+|       |
+|       |
+---------
+Score for position 1 = 0
+Score for position 2 = 0
+Score for position 3 = 0
+Score for position 4 = 0
+Score for position 5 = 0
+Score for position 6 = 0
+Score for position 7 = 0
+Score for position 8 = 0
+Score for position 9 = 0
+---------
+|       |
+|       |
+|     X |
+---------
+Making move level &quot;medium&quot;
+---------
+|       |
+|     O |
+|     X |
+---------
+Score for position 1 = 0
+Score for position 2 = 0
+Score for position 3 = 0
+Score for position 4 = 0
+Score for position 5 = 10
+---------
+|       |
+|   X O |
+|     X |
+---------
+Making move level &quot;medium&quot;
+---------
+| O     |
+|   X O |
+|     X |
+---------
+Score for position 1 = 0
+Score for position 2 = 0
+Score for position 3 = 0
+Score for position 4 = 10
+---------
+| O     |
+|   X O |
+| X   X |
+---------
+Making move level &quot;medium&quot;
+---------
+| O     |
+|   X O |
+| X O X |
+---------
+Score for position 1 = 0
+Score for position 2 = 10
+---------
+| O   X |
+|   X O |
+| X O X |
+---------
+X wins
+Input command: 
+&gt; exit
+?[1;31m
+Start test 17?[0m
+Input command: 
+&gt; start easy hard
+---------
+|       |
+|       |
+|       |
+---------
+Making move level &quot;easy&quot;
+---------
+|       |
+|   X   |
+|       |
+---------
+Score for position 1 = 0
+Score for position 2 = -10
+Score for position 3 = 0
+Score for position 4 = -10
+Score for position 5 = -10
+Score for position 6 = 0
+Score for position 7 = -10
+Score for position 8 = 0
+---------
+|       |
+|   X   |
+|     O |
+---------
+Making move level &quot;easy&quot;
+---------
+|       |
+|   X   |
+|   X O |
+---------
+Score for position 1 = -10
+Score for position 2 = 0
+Score for position 3 = -10
+Score for position 4 = -10
+Score for position 5 = -10
+Score for position 6 = -10
+---------
+|   O   |
+|   X   |
+|   X O |
+---------
+Making move level &quot;easy&quot;
+---------
+| X O   |
+|   X   |
+|   X O |
+---------
+Score for position 1 = 0
+Score for position 2 = 0
+Score for position 3 = 0
+Score for position 4 = 0
+---------
+| X O   |
+|   X   |
+| O X O |
+---------
+Making move level &quot;easy&quot;
+---------
+| X O   |
+| X X   |
+| O X O |
+---------
+Score for position 1 = -10
+Score for position 2 = 0
+---------
+| X O   |
+| X X O |
+| O X O |
+---------
+Making move level &quot;easy&quot;
+---------
+| X O X |
+| X X O |
+| O X O |
+---------
+Draw
+Input command: 
+&gt; exit
+?[1;31m
+Start test 18?[0m
+Input command: 
+&gt; start hard easy
+---------
+|       |
+|       |
+|       |
+---------
+Score for position 1 = 0
+Score for position 2 = 0
+Score for position 3 = 0
+Score for position 4 = 0
+Score for position 5 = 0
+Score for position 6 = 0
+Score for position 7 = 0
+Score for position 8 = 0
+Score for position 9 = 0
+---------
+|       |
+|       |
+|     X |
+---------
+Making move level &quot;easy&quot;
+---------
+|       |
+|       |
+| O   X |
+---------
+Score for position 1 = 10
+---------
+| X     |
+|       |
+| O   X |
+---------
+Making move level &quot;easy&quot;
+---------
+| X     |
+|       |
+| O O X |
+---------
+Score for position 1 = 10
+---------
+| X X   |
+|       |
+| O O X |
+---------
+Making move level &quot;easy&quot;
+---------
+| X X   |
+| O     |
+| O O X |
+---------
+Score for position 1 = 10
+---------
+| X X X |
+| O     |
+| O O X |
+---------
+X wins
+Input command: 
+&gt; exit
+?[1;31m
+Start test 19?[0m
 Input command: 
 &gt; start user user
 ---------
@@ -3056,7 +3482,7 @@ Input command:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 5.3.1</a> at Sep 14, 2020, 11:10:42 AM</p>
+<a href="http://www.gradle.org">Gradle 6.6.1</a> at Sep 22, 2020, 1:59:46 PM</p>
 </div>
 </div>
 </body>
