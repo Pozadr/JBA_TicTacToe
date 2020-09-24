@@ -11,6 +11,7 @@ public enum Symbol {
         this.symbol = symbol;
     }
 
+
     public String getSymbol() {
         return symbol;
     }
