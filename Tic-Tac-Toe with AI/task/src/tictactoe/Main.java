@@ -1,5 +1,9 @@
 package tictactoe;
 
+import tictactoe.players.Player;
+import tictactoe.matrix.GameMatrix;
+import tictactoe.matrix.Symbol;
+
 import java.util.Scanner;
 
 public class Main {

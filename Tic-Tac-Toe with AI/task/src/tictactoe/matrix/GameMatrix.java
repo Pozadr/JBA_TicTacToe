@@ -1,4 +1,4 @@
-package tictactoe;
+package tictactoe.matrix;
 
 import java.util.ArrayList;
 

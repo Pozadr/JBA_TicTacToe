@@ -1,13 +1,16 @@
-package tictactoe;
+package tictactoe.players;
+
+import tictactoe.matrix.GameMatrix;
+import tictactoe.matrix.Symbol;
 
 public abstract class Player {
-    protected Symbol symbol;
+    public Symbol symbol;
 
     public Player(Symbol symbol) {
         this.symbol = symbol;
     }
 
-    protected abstract void move(GameMatrix matrix);
+    public abstract void move(GameMatrix matrix);
 
     public static Player createPlayer (Symbol symbol, String request){
         switch (request) {

@@ -1,4 +1,4 @@
-package tictactoe;
+package tictactoe.matrix;
 
 public enum Symbol {
     X("X"),
