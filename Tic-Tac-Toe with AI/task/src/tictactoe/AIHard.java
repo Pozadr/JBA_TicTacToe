@@ -30,7 +30,7 @@ public class AIHard extends Player {
      * Optimized by breaking loops during searching for best score.
      * @param matrix - current gameMatrix state.
      * @param depth - depth of minimax algorithm recursion.
-     * @param player - variable to check which player turn is.
+     * @param player - qvariable to check which player turn is.
      * @return
      */
     private int minimax (GameMatrix matrix, int depth, Symbol player) {
