@@ -2,8 +2,9 @@
 [JetBrains Academy](https://hyperskill.org) / Java Developer project.
 [My profile -> Pozadr](https://hyperskill.org/profile/17362185 "Pozadr")
 
-JBA_TicTacToe/Tic-Tac-Toe with AI/task/src/tictactoe/
+Source code: *JBA_TicTacToe/Tic-Tac-Toe with AI/task/src/tictactoe/*
 
+## Description
 TicTacToe game with 3 levels of AI. 
 
 There are two implementation on two branches:

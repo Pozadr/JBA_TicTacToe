@@ -18,7 +18,7 @@ public class Main {
                 if (input[0].equals("start")){
                     if (input.length < 2) {
                         System.out.println("Bad parameters!");
-                    }
+                    }git
                     else {
                         String player1Input = input[1];
                         String player2Input = input[2];
